@@ -11,7 +11,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-        <img src="../Imagens/super-mario.png alt="Logotipo Game">
+        <img src="../imagens/super-mario.png" alt="Logotipo Game" width="50" height="50" >
         </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
