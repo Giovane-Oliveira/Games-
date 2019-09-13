@@ -87,7 +87,13 @@
                 <h4>NOME GAME</h4>
                 <p>Descrição</p>
                 <img src="../imagens/game/game1.jpg">
-
+                
+                <br>
+                <br>
+                  <p>
+                    <button type="button" class="btn-outline-success">Visualizar</button>
+                    <button type="button" class="btn-outline-success">Solicitar Emprestimo</button>
+                  </p>
 
                 </div>
 
