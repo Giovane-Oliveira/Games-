@@ -52,6 +52,8 @@
 <div  class="container" align="center">
   
             <div class="row">
+
+
                 <div class="col">
                  <br>
                   <table class="table">
@@ -77,12 +79,16 @@
                     </tbody>
                   </table>
                   </div>
+
+
                 <div class="col-8">
-                2 de 3 (maior)
+                <br>
+
+
                 </div>
 
                 <div class="col">
-                  <br>
+                <br>
                  <table class="table">
                     <thead class="thead-dark">
                       <tr>
