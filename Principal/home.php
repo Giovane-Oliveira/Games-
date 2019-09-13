@@ -80,22 +80,44 @@
                   </table>
                   </div>
 
-
+             
                 <div class="col-8">
                 <br>
+                 <div class="rolagem">
+                <div class="container" align="center">
+                  <div class="row">
 
+                      <div class="col">
+                        <img src="../imagens/user/user.png" alt="Foto Usuario" class="rounded-circle" width="70" height="70">
+                      </div>
+                      <div class="col" >
+                        <h5 class="float-left">Nome do proprietario</h5>
+                      </div>
+                  </div>
+                </div>
                 <h4>NOME GAME</h4>
                 <p>Descrição</p>
-                <img src="../imagens/game/game1.jpg">
+                <img src="../imagens/game/game1.jpg" width="400" height="400">
                 
                 <br>
                 <br>
-                  <p>
-                    <button type="button" class="btn-outline-success">Visualizar</button>
-                    <button type="button" class="btn-outline-success">Solicitar Emprestimo</button>
-                  </p>
+                
+                <div class="row">
 
+                      <div class="col">
+                         <button type="button" class="btn btn-outline-success float-right">Visualizar</button>
+                      </div>
+                      <div class="col" >
+                        <button type="button" class="btn btn-outline-success float-left">Solicitar Emprestimo</button>
+                      </div>
+
+                      
+
+                  
                 </div>
+                
+                </div>
+              </div>
 
                 <div class="col">
                 <br>
@@ -124,6 +146,9 @@
                  </div>
                 </div>
             </div>
+
+
+
 
 
 
