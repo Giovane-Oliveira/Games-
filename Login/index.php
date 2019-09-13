@@ -8,8 +8,11 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="Login.css">
+<script src="Validar.js" charset="utf-8"></script>
+</script>
   </head>
-  <body>
+  <?php session_start(); ?>
+  <body onload="validar('<?php echo $_SESSION['logado'];?>')">
     <div class="container-fluid">
   <div class="row no-gutter">
     <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
@@ -21,23 +24,25 @@
               <h3 class="login-heading mb-4">Seja Bem-Vindo!</h3>
               <form action="login.php" method="post">
                 <div class="form-label-group">
-                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
+                  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus >  <!-- required autofocus -->
                   <label for="inputEmail">Email</label>
                 </div>
                 <div class="form-label-group">
-                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="senha" required>
+                  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="senha" required >  <!-- required -->
                   <label for="inputPassword">Senha</label>
                 </div>
 
                 <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" class="custom-control-input" id="customCheck1">
+                  <p id="aviso"> </p>
                   <label class="custom-control-label" for="customCheck1">Lembrar Senha</label>
                 </div>
                 <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Entrar</button>
-                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Cadastrar</button>
+
                 <div class="text-center">
-                  <a class="small" href="#">Esqueceu a Senha?</a></div>
               </form>
+              <button onclick="window.location.href='./cadastroUsuario.php';" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">Cadastrar</button>
+              <a class="small" href="#">Esqueceu a Senha?</a></div>
             </div>
           </div>
         </div>
@@ -45,5 +50,6 @@
     </div>
   </div>
 </div>
+
   </body>
 </html>
