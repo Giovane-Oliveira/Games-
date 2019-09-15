@@ -8,6 +8,17 @@
   min-height: 100vh;
 }
 
+
+.carousel-inner {
+
+  margin-top: 10%;
+  margin-left: 2%;
+  width:680px;
+
+  
+
+}
+
 .bg-image {
   background-image: url('https://source.unsplash.com/WEQbe2jBg40/600x1200');
   background-size: cover;

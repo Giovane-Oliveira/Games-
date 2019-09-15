@@ -51,7 +51,7 @@ header('location:../index.html');
 }else{
  unset ($_SESSION['email']);
  unset ($_SESSION['senha']);
- 	$_SESSION['logado'] = false;
+ $_SESSION['logado'] = false;
 
 
  //$msg = 'login ou usuario incorreto!';
