@@ -15,6 +15,12 @@
 
 <?php
 
+
+
+
+
+$_SESSION['count'] = 1;
+
 $consulta = "SELECT * FROM usuario WHERE email = '{$_POST['email']}' AND senha = '{$_POST['senha']}';";
 
 $email = $_POST['email'];
@@ -42,7 +48,7 @@ if(mysqli_num_rows ($result) > 0 )
 	$_SESSION['email'] = $email;
 	$_SESSION['senha'] = $senha;
 	$_SESSION['logado'] = true;
-
+	
 
 //echo $_SESSION['email'];
 header('location:../index.html');
@@ -60,6 +66,5 @@ header('location:../index.html');
 <script>window.location.assign('index.php');</script>
 
 
+<?php  } ?>
 
-
-<?  } ?>

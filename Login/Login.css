@@ -8,6 +8,14 @@
   min-height: 100vh;
 }
 
+.hidden {
+  display: none !important;
+}
+
+.show {
+  display: block !important;
+}
+
 
 .carousel-inner {
 
