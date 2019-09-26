@@ -1,25 +1,13 @@
 <?php
 include '../config/conexao.php';
-$consulta = "SELECT * FROM genero;";
+$consulta = "SELECT * FROM usuario;";
 $result = mysqli_query($conecta, $consulta);
-
-
 
 ?>
 
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
 <?php while($resultado = mysqli_fetch_array($result)) { ?>
 	<tr>
-      <td><?php echo $resultado['id']; ?></td>
-      <td><?php echo $resultado['nomeGenero']; ?></td>
+      <th scope="row"><?php echo $resultado['id']; ?></th>
+      <td><?php echo $resultado['nome']; ?></td>
     </tr>
 <?php } ?>
-</body>
-</html>
-   

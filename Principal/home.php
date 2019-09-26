@@ -17,7 +17,7 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-        <img src="../imagens/super-mario.png" alt="Logotipo Game" width="50" height="50" >
+        <img src="../imagens/Logo.png" alt="Logotipo Game" width="50" height="50" >
         </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -69,22 +69,9 @@
                     <tbody>
 
                     <?php
-                      include 'buscaUsuarios.php';
+                      include 'buscaGenero.php';
 
                     ?>
-                     <!-- <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                      </tr>-->
-
 
                     </tbody>
                   </table>
@@ -134,23 +121,18 @@
                  <table class="table">
                     <thead class="thead-dark">
                       <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"></th>
                         <th scope="col">Usuarios</th>
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                      </tr>
-                      <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                      </tr>
+
+                    <?php
+
+                      include 'buscaUsuarios.php';
+
+                    ?>
+
                     </tbody>
                   </table>
                  </div>
