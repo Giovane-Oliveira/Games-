@@ -63,7 +63,7 @@ header('location:../index.html');
  //$msg = 'login ou usuario incorreto!';
 // echo "<script>alert('$msg');window.location.assign('Login.html');</script>";
 ?>
-<script>window.location.assign('index.php');</script>
+<script>window.location.assign('../Principal/home.php');</script>
 
 
 <?php  } ?>
