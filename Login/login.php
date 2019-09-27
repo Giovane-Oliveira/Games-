@@ -15,6 +15,12 @@
 
 <?php
 
+
+
+
+
+$_SESSION['count'] = 1;
+
 $consulta = "SELECT * FROM usuario WHERE email = '{$_POST['email']}' AND senha = '{$_POST['senha']}';";
 
 $email = $_POST['email'];
@@ -30,14 +36,8 @@ $resultado = mysqli_fetch_array($result);
 
 $id = $resultado['id'];
 $email = $resultado['email'];
-$nome = $resultado['nome'];
 $senha = $resultado['senha'];
-$rua = $resultado['rua'];
-$casaNumero = $resultado['casaNumero'];
-$cidade = $resultado['cidade'];
-$bairro = $resultado['bairro'];
-$cep = $resultado['cep'];
-$telefone = $resultado['telefone'];
+
 
 
 
@@ -46,27 +46,24 @@ if(mysqli_num_rows ($result) > 0 )
 {
 	$_SESSION['id'] = $id;
 	$_SESSION['email'] = $email;
-	$_SESSION['nome'] = $nome;
 	$_SESSION['senha'] = $senha;
-	$_SESSION['rua'] = $rua;
-	$_SESSION['casaNumero'] = $casaNumero;
-	$_SESSION['cidade'] = $cidade;
-	$_SESSION['bairro'] = $bairro;
-	$_SESSION['cep'] = $cep;
-	$_SESSION['telefone'] = $telefone;
 	$_SESSION['logado'] = true;
-
+	
 
 //echo $_SESSION['email'];
-header('location:../index.html');
+header('location:../Principal/home.php');
 //echo "deu";
 
-}
-else{
+}else{
  unset ($_SESSION['email']);
  unset ($_SESSION['senha']);
- $msg = 'login ou usuario incorreto!';
- echo "<script>alert('$msg');window.location.assign('login.php');</script>";
+ $_SESSION['logado'] = false;
 
-  }
+
+ //$msg = 'login ou usuario incorreto!';
+// echo "<script>alert('$msg');window.location.assign('Login.html');</script>";
 ?>
+<script>window.location.assign('./index.php');</script>
+
+<?php  } ?>
+
