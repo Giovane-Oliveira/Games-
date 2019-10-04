@@ -1,21 +1,12 @@
-html{
+html {
 
 	height: 100%;
-	overflow:  scroll;
-
+	
 }
 
-
-
-
-h3{
+h3 {
 	color: white;
 	padding-left: 1em;
 	padding-right: 1em;
 }
 
-.rolagem{
- 	
-	overflow:  scroll;
-
-}

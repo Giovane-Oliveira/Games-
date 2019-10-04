@@ -17,16 +17,21 @@
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
   <div class="container">
     <a class="navbar-brand" href="#">
-        <img src="../imagens/Logo.png" alt="Logotipo Game" width="50" height="50" >
+        <img src="../imagens/super-mario.png" alt="Logotipo Game" width="50" height="50" >
         </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
         </button>
         <h3>Alpha Games</h3>
 
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        <form class="form-inline my-2 my-lg-0"  method="POST" action="pesquisar.php">
+
+
+        <input class="form-control mr-sm-2" type="text" name="pesquisar" placeholder="Nome Game" aria-label="Pesquisar" >
+
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="ENVIAR">Pesquisar</button>
+
+
         </form>
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
@@ -77,44 +82,11 @@
                   </table>
                   </div>
 
-             
-                <div class="col-8">
-                <br>
-                 <div class="rolagem">
-                <div class="container" align="center">
-                  <div class="row">
+                   <?php
+                      include 'buscaJogos.php';
 
-                      <div class="col">
-                        <img src="../imagens/user/user.png" alt="Foto Usuario" class="rounded-circle" width="70" height="70">
-                      </div>
-                      <div class="col" >
-                        <h5 class="float-left">Nome do proprietario</h5>
-                      </div>
-                  </div>
-                </div>
-                <h4>NOME GAME</h4>
-                <p>Descrição</p>
-                <img src="../imagens/game/game1.jpg" width="400" height="400">
-                
-                <br>
-                <br>
-                
-                <div class="row">
+                    ?>
 
-                      <div class="col">
-                         <button type="button" class="btn btn-outline-success float-right">Visualizar</button>
-                      </div>
-                      <div class="col" >
-                        <button type="button" class="btn btn-outline-success float-left">Solicitar Emprestimo</button>
-                      </div>
-
-                      
-
-                  
-                </div>
-                
-                </div>
-              </div>
 
                 <div class="col">
                 <br>
