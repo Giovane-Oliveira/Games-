@@ -13,47 +13,12 @@
 </head>
 <body>
 
-  <!-- BARRA DE NAVEGAÇÃO -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-        <img src="../imagens/super-mario.png" alt="Logotipo Game" width="50" height="50" >
-        </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-        <h3>Alpha Games</h3>
+<!-- BARRA DE NAVEGAÇÃO -->
+ <?php
 
-        <form class="form-inline my-2 my-lg-0"  method="POST" action="pesquisar.php">
+  include 'barraNavegacao.php';
 
-
-        <input class="form-control mr-sm-2" type="text" name="pesquisar" placeholder="Nome Game" aria-label="Pesquisar" >
-
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit" value="ENVIAR">Pesquisar</button>
-
-
-        </form>
-
-    <div class="collapse navbar-collapse" id="navbarResponsive">
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Home
-                <span class="sr-only">(current)</span>
-              </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Usuarios</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Cadastros</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Perfil</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+?> 
 
 <!-- CORPO PRINCIPAL -->
 
@@ -83,8 +48,14 @@
                   </div>
 
                    <?php
-                      include 'buscaJogos.php';
 
+                      if (isset($teste)){
+                        include 'buscaJogosPesquisa.php';
+                      }else{
+                        include 'buscaJogos.php';
+                      }
+
+              
                     ?>
 
 
