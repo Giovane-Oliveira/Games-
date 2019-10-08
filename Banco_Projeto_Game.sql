@@ -28,7 +28,13 @@ CREATE TABLE IF NOT EXISTS `game` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela projetogame.game: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `game` DISABLE KEYS */;
+INSERT INTO `game` (`id`, `nomeGame`, `descricao`, `imgCapa`, `disponivel`, `usuario_id`, `genero_id`) VALUES
+	(1, 'gta', 'Jogo Gta vida real', 'Imagens\\game\\game1.jpg\r\n', 0, 2, 1),
+	(2, 'PES', 'Jogo de Futebol', 'Imagens\\game\\game2.jpg', 1, 2, 2),
+	(3, 'Call of duty', 'tiro', 'Imagens\\game\\game3.jpg', 0, 1, 3);
+/*!40000 ALTER TABLE `game` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela projetogame.genero
 CREATE TABLE IF NOT EXISTS `genero` (
@@ -37,7 +43,20 @@ CREATE TABLE IF NOT EXISTS `genero` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela projetogame.genero: ~10 rows (aproximadamente)
+/*!40000 ALTER TABLE `genero` DISABLE KEYS */;
+INSERT INTO `genero` (`id`, `nomeGenero`) VALUES
+	(1, 'Ação'),
+	(2, 'Aventura'),
+	(3, 'Luta'),
+	(4, 'Tiro'),
+	(5, 'Rpg'),
+	(6, 'Construção'),
+	(7, 'Vida Virtual'),
+	(8, 'Música'),
+	(9, 'Esportes'),
+	(10, 'Corrida');
+/*!40000 ALTER TABLE `genero` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela projetogame.situacao
 CREATE TABLE IF NOT EXISTS `situacao` (
@@ -46,7 +65,9 @@ CREATE TABLE IF NOT EXISTS `situacao` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela projetogame.situacao: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `situacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `situacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela projetogame.solicitacao
 CREATE TABLE IF NOT EXISTS `solicitacao` (
@@ -58,7 +79,9 @@ CREATE TABLE IF NOT EXISTS `solicitacao` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela projetogame.solicitacao: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `solicitacao` DISABLE KEYS */;
+/*!40000 ALTER TABLE `solicitacao` ENABLE KEYS */;
 
 -- Copiando estrutura para tabela projetogame.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
@@ -78,7 +101,13 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
--- Exportação de dados foi desmarcado.
+-- Copiando dados para a tabela projetogame.usuario: ~2 rows (aproximadamente)
+/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
+INSERT INTO `usuario` (`id`, `nome`, `email`, `rua`, `bairro`, `cidade`, `casa`, `estado`, `cpf`, `cep`, `telefone`, `senha`, `imgPerfil`) VALUES
+	(1, 'Alison Dias', 'alisoondias@gmail.com', 'Gustavo Peixoto', 'Tibiriça', 'Cachoeira do Sul', '1597', 'RS', '03620421013', 96503680, 996722363, '123', '../Imagens\\user\\user1.jpg'),
+	(2, 'Pedro Machado', 'pedri@gmail.com', 'Carlos Miguel', 'Noemia', 'Cachoeira do Sul', '2587', 'RS', '03652478910', 96503680, 998756325, '123', '../Imagens\\user\\user2.png'),
+	(3, 'Alison Dias', 'alison@genteterra.com', 'Gustavo Peixoto', 'TibiriÃ§a', 'Cachoeira do sul', '1597', 'Rs', '03620421013', 96503680, 2147483647, 'Teste123', '../Imagens/user/085821bf5e34b48208f30438151f64d6.png');
+/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;

@@ -20,7 +20,33 @@
 
 <!-- CORPO PRINCIPAL -->
 
+<div class="tableUsuarios">	
+	<table class="table">
+	    <thead class="thead-dark">
+	        <tr>
+	            <th scope="col">Id</th>
+	            <th scope="col">Perfil</th>
+	            <th scope="col">Nome</th>
+	            <th scope="col">E-mail</th>
+	            <th scope="col">Cidade</th>
+	            <th scope="col">Rua</th>
+	            <th scope="col">Nº Casa</th>
+	            <th scope="col">Nº Telefone</th>
+	            <th scope="col">Perfil</th>
 
+	        </tr>
+	            </thead>
+	                <tbody>
+
+	                    <?php
+
+	                      include 'buscaUsuariosTable.php';
+
+	                    ?>
+
+	                 </tbody>
+	            </table>
+</div>
 
 
 

@@ -1,4 +1,5 @@
 
+<?php include '../config/conexao.php';?>
 
 <!DOCTYPE html>
 <html>
@@ -49,11 +50,9 @@
 
                    <?php
 
-                      if (isset($teste)){
-                        include 'buscaJogosPesquisa.php';
-                      }else{
+                      
                         include 'buscaJogos.php';
-                      }
+                      
 
               
                     ?>

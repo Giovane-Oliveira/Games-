@@ -1,22 +1,35 @@
 <?php
-include '../config/conexao.php';
-$consulta = "SELECT * FROM game;";
-$result = mysqli_query($conecta, $consulta);
 
+if(isset($_POST['pesquisar'])){
 
+$pesquisar = $_POST['pesquisar'];
+$consulta_game = "SELECT * FROM game WHERE nomeGame LIKE '%$pesquisar%';";
+$resultado_game = mysqli_query($conecta, $consulta_game);
+
+}else if(isset($_GET['idGenero'])){
+
+$id_genero = $_GET['idGenero'];
+$consulta_game = "SELECT * FROM game WHERE genero_id = '$id_genero%';";
+$resultado_game = mysqli_query($conecta, $consulta_game);
+
+}else{
+
+$consulta_game = "SELECT * FROM game;";
+$resultado_game = mysqli_query($conecta, $consulta_game);
+
+}
 
 
 ?>
 
 
-	<div class="col-8">
+	<div class="col-7">
         <br>
             <div class="rolagem">
 
-            	<?php while($resultado = mysqli_fetch_array($result)) {
+            	<?php while($resultado = mysqli_fetch_array($resultado_game)) {
 
             	$id_usuario = $resultado['usuario_id'];	
-
 
             	$consultaUsuario = "SELECT nome, imgPerfil FROM usuario WHERE id = $id_usuario;";
 

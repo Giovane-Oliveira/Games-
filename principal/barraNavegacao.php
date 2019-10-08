@@ -8,7 +8,7 @@
         </button>
         <h3><a class="nav-link" href="home.php">Alpha Games</a></h3>
 
-        <form class="form-inline my-2 my-lg-0"  method="POST" action="pesquisar.php">
+        <form class="form-inline my-2 my-lg-0"  method="POST" action="home.php">
 
 
         <input class="form-control mr-sm-2" type="text" name="pesquisar" placeholder="Nome Game" aria-label="Pesquisar" >
@@ -26,7 +26,7 @@
               </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Usuarios</a>
+          <a class="nav-link" href="usuarios.php">Usuarios</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Perfil</a>

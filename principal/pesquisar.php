@@ -1,8 +1,9 @@
 <?php
 
-  $teste = true;
+$caixaPesquisa = true;
 
-  include 'home.php';
+include 'home.php';
 
+   
 
 ?>
