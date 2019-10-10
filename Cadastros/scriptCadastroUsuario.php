@@ -7,7 +7,7 @@
 	$nome     = $_POST['nome'];
 	$email    = $_POST['email'];
 	$cep      = $_POST['cep'];
-	$endereco = $_POST['endereco'];
+	$rua      = $_POST['rua'];
 	$numero   = $_POST['numero'];
 	$bairro   = $_POST['bairro'];
 	$cidade   = $_POST['cidade'];
@@ -28,7 +28,7 @@
 			move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio.$novo_nome); //efetua o upload
 			
 			$sql_code = "INSERT INTO usuario (nome, email, rua, bairro, cidade, casa, estado, cpf, cep, telefone, senha, imgPerfil) ";
-			$sql_code .= "VALUES('".$nome."', '".$email."', '".$endereco."', '".$bairro."', '".$cidade."', '".$numero."', '".$estado."', '".$cpf."', '".$cep."', '".$telefone."', '".$senha."', '".$diretorio.$novo_nome."')";
+			$sql_code .= "VALUES('".$nome."', '".$email."', '".$rua."', '".$bairro."', '".$cidade."', '".$numero."', '".$estado."', '".$cpf."', '".$cep."', '".$telefone."', '".$senha."', '".$diretorio.$novo_nome."')";
 			
 			
 			if ($conecta->query($sql_code) === TRUE){
