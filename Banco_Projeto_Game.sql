@@ -85,15 +85,15 @@ CREATE TABLE IF NOT EXISTS `solicitacao` (
 
 -- Copiando estrutura para tabela projetogame.usuario
 CREATE TABLE IF NOT EXISTS `usuario` (
-  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `id` int(100) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
   `rua` varchar(255) DEFAULT NULL,
   `bairro` varchar(255) DEFAULT NULL,
   `cidade` varchar(255) DEFAULT NULL,
-  `casa` varchar(50) DEFAULT NULL,
+  `casa` int(10) DEFAULT NULL,
   `estado` varchar(2) DEFAULT NULL,
-  `cpf` varchar(11) DEFAULT NULL,
+  `cpf` char(11) DEFAULT NULL,
   `cep` int(8) DEFAULT NULL,
   `telefone` int(20) NOT NULL,
   `senha` varchar(50) DEFAULT NULL,
