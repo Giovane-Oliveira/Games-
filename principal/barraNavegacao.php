@@ -29,7 +29,7 @@
           <a class="nav-link" href="usuarios.php">Usuarios</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Perfil</a>
+          <a class="nav-link" href="perfilUsuario.php">Perfil</a>
         </li>
       </ul>
     </div>
