@@ -26,27 +26,51 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <img src="../imagens/user/user1.jpg" alt="Foto usuario" class="rounded-circle" width="150" height="300">
-      <br>
-      <br>
-      <h5>Dados Usuario</h5>
-      <p></p>
+
+      <?php  
+      
+      include '../usuarios/buscaDadosUsuario.php';
+
+      ?>
     </div>
     <div class="col-6">
+      <h1>Jogos</h1>
       <div class="tableUsuarios"> 
-  <table class="table">
-      <thead class="thead-dark">
+        <table class="table">
+          
+          <thead class="thead-dark">
           <tr>
               <th scope="col">Img</th>
               <th scope="col">Nome</th>
               <th scope="col">Descrição</th>
               <th scope="col">Status</th>
-              
-              
-
           </tr>
-              </thead>
-                  <tbody>
+          </thead>
+          <tbody>
+
+                      <?php
+
+                       include '../usuarios/buscaJogosUsuario.php'
+
+                      ?>
+
+            </tbody>
+          </table>
+      </div>
+    </div>
+    <div class="col">
+      <h1>Emprestimos</h1>
+      <div class="tableUsuarios"> 
+        <table class="table">
+          <thead class="thead-dark">
+          <tr>
+              <th scope="col">Emprestimo</th>
+              <th scope="col">Jogo</th>
+              <th scope="col">Dono</th>
+              <th scope="col"></th>
+          </tr>
+          </thead>
+          <tbody>
 
                       <?php
 
@@ -54,15 +78,10 @@
 
                       ?>
 
-                   </tbody>
-              </table>
-</div>
+            </tbody>
+          </table>
+      </div>
     </div>
-    <div class="col">
-      3 de 3
-    </div>
-  </div>
-</div>
 
 
 

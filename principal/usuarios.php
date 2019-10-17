@@ -1,8 +1,10 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Alpha Games</title>
-  <meta charset="UTF-8">
+  <meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
   <?php header("Content-Type: text/html; charset=ISO-8859-1",true);?>
   <meta name="description" content="Curso de Sistemas de Informação">
   <meta name="keywords" content="ULBRA, SI, Cachoeira do Sul">
@@ -30,8 +32,8 @@
 	            <th scope="col">E-mail</th>
 	            <th scope="col">Cidade</th>
 	            <th scope="col">Rua</th>
-	            <th scope="col">Nº Casa</th>
-	            <th scope="col">Nº Telefone</th>
+	            <th scope="col">Nº da casa</th>
+	            <th scope="col">Numero do Telefone</th>
 	            <th scope="col">Perfil</th>
 
 	        </tr>
