@@ -64,17 +64,17 @@
         <table class="table">
           <thead class="thead-dark">
           <tr>
-              <th scope="col">Emprestimo</th>
+              <th scope="col">Id</th>
               <th scope="col">Jogo</th>
               <th scope="col">Dono</th>
-              <th scope="col"></th>
+              <th scope="col">Status</th>
           </tr>
           </thead>
           <tbody>
 
                       <?php
 
-                        //include 'buscaUsuariosTable.php';
+                       include '../usuarios/buscaEmprestimosJogos.php'
 
                       ?>
 
