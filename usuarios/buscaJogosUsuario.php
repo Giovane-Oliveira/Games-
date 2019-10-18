@@ -1,8 +1,19 @@
 <?php
 
+if(isset($_GET['idUsuario'])){
+
+$idUsuario = $_GET['idUsuario'];	
+
+$consulta_game = "SELECT * FROM game WHERE usuario_id = $idUsuario;";
+$resultado_game = mysqli_query($conecta, $consulta_game);
+
+
+}else{
+
 $consulta_game = "SELECT * FROM game WHERE usuario_id = $_SESSION[id];";
 $resultado_game = mysqli_query($conecta, $consulta_game);
 
+}
 
 ?>
 

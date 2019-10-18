@@ -7,7 +7,7 @@ $result = mysqli_query($conecta, $consulta);
 
 <?php while($resultado = mysqli_fetch_array($result)) { 
 
-	$teste =  $resultado['id']?>
+	$usuario_id =  $resultado['id']?>
 	<tr>
 
       <th><?php echo $resultado['id']; ?></th>
@@ -18,7 +18,7 @@ $result = mysqli_query($conecta, $consulta);
       <td><?php echo $resultado['rua']; ?></td>
       <td><?php echo $resultado['casa']; ?></td>
       <td><?php echo $resultado['telefone']; ?></td>
-      <td><a href="home.php?idGenero=<?php echo($teste)?>"><img src="../imagens/icon/iconPesquisa.png" width="20" height="20"></a></td>
+      <td><a href="perfilUsuario.php?idUsuario=<?php echo($usuario_id)?>"><img src="../imagens/icon/iconPesquisa.png" width="20" height="20"></a></td>
       
     </tr>
 <?php } ?>

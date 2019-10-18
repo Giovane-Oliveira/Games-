@@ -9,7 +9,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 }else if(isset($_GET['idGenero'])){
 
 $id_genero = $_GET['idGenero'];
-$consulta_game = "SELECT * FROM game WHERE genero_id = '$id_genero%';";
+$consulta_game = "SELECT * FROM game WHERE genero_id = '$id_genero';";
 $resultado_game = mysqli_query($conecta, $consulta_game);
 
 }else{

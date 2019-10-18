@@ -1,9 +1,19 @@
 <?php
 
+if(isset($_GET['idUsuario'])){
+
+$idUsuario = $_GET['idUsuario'];	
+
+$consulta_emprestimo = "SELECT * FROM solicitacao WHERE usuario_id = $idUsuario;";
+$resultado_emprestimo = mysqli_query($conecta, $consulta_emprestimo);
+
+}else{
+
+
 $consulta_emprestimo = "SELECT * FROM solicitacao WHERE usuario_id = $_SESSION[id];";
 $resultado_emprestimo = mysqli_query($conecta, $consulta_emprestimo);
 
-
+}
 ?>
 
 	<?php while($resultado = mysqli_fetch_array($resultado_emprestimo)) {

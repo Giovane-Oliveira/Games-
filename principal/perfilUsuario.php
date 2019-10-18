@@ -27,11 +27,11 @@
   <div class="row">
     <div class="col">
 
-      <?php  
-      
-      include '../usuarios/buscaDadosUsuario.php';
+                  <?php  
+                  
+                  include '../usuarios/buscaDadosUsuario.php';
 
-      ?>
+                  ?>
     </div>
     <div class="col-6">
       <h1>Jogos</h1>
