@@ -101,8 +101,7 @@
 				
 								<div id="divCadastroUsuario" class="col-md-9 col-lg-8 mx-auto">
 								
-									<div class="p-3 mb-2 bg-primary text-white " id="cadastroUsuario" ><h2>CADASTRO</h2></div>
-									<div class="p-3 mb-2 bg-secondary text-white">INFORME OS DADOS A SEGUIR:<br/><br/>
+									<div class="p-3 mb-2 bg-light text-dark">INFORME OS DADOS A SEGUIR:<br/><br/>
 																		
 										<form enctype="multipart/form-data" name="cadastroUsuario" action="scriptCadastroUsuario.php" method="POST">
 																			
@@ -146,7 +145,9 @@
 												<input class="form-control" type="password" id="senha2" placeholder="Repetir Senha" onkeyup="validarSenha();" required />
 												<label id="confereSenha"></label><br /><br/>
 											</div>
-											<div class="form-label-group">
+											
+											
+											<div class="form-label-group ">
 												<input type="file" name="imagem" value="Carregar Imagem"> <br />
 											</div>
 																					
