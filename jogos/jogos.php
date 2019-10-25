@@ -36,18 +36,22 @@
               <th scope="col">Nome</th>
               <th scope="col">Descrição</th>
               <th scope="col">Status</th>
+              <th scope="col">Editar</th>
           </tr>
           </thead>
           <tbody>
 
                       <?php
 
-                       include '../usuarios/buscaJogosUsuario.php'
+                       include 'buscaJogosUsuarioBarra.php'
 
                       ?>
 
             </tbody>
           </table>
+
+          
+          <a class="btn btn-dark btn-lg btn-block" href="#" role="button">Cadastrar Jogo</a>
       </div>
     </div>
 
