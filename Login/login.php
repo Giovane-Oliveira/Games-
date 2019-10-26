@@ -18,9 +18,6 @@
 
 
 
-
-$_SESSION['count'] = 1;
-
 $consulta = "SELECT * FROM usuario WHERE email = '{$_POST['email']}' AND senha = '{$_POST['senha']}';";
 
 $email = $_POST['email'];
@@ -39,20 +36,18 @@ $email = $resultado['email'];
 $senha = $resultado['senha'];
 
 
-
-
 if(mysqli_num_rows ($result) > 0 )
-
 {
 	$_SESSION['id'] = $id;
 	$_SESSION['email'] = $email;
 	$_SESSION['senha'] = $senha;
 	$_SESSION['logado'] = true;
 	
+?> <script>
+alert("Seja bem-vindo ao Alpha Games")
+window.location.assign('../Principal/home.php')
+</script> <?php
 
-//echo $_SESSION['email'];
-header('location:../Principal/home.php');
-//echo "deu";
 
 }else{
  unset ($_SESSION['email']);
@@ -63,8 +58,9 @@ header('location:../Principal/home.php');
  //$msg = 'login ou usuario incorreto!';
 // echo "<script>alert('$msg');window.location.assign('Login.html');</script>";
 ?>
-<script>window.location.assign('index.php');</script>
-
+<script>
+alert("Usuário ou senha inválidos")
+window.location.assign('index.php');</script>
 
 <?php  } ?>
 

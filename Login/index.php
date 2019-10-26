@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="Login.css">
 <script src="Validar.js" charset="utf-8"></script>
   </head>
-  <?php session_start(); ?>
   <body class="img-fluid" background="../Imagens/background.png">
     <div class="container-fluid">
   <div class="row no-gutter">
@@ -39,24 +38,6 @@
 
                 <div class="custom-control custom-checkbox mb-3">
                   <input type="checkbox" class="custom-control-input" id="customCheck1" name="lembrar">
-                  
-                
-                  <?php if($_SESSION['logado'] == "" && $_SESSION['count'] == 1){
-                    
-                    $_SESSION['count'] = 0;
-                    
-                    ?>
-
-            <div class="alert alert-danger">
-            <strong>Erro!</strong> Email ou senha inválida!
-                  </div>
-    
-               <?php   }else{   $_SESSION['count'] = 0;?>
-                <div class="alert alert-danger hidden">
-            <strong>Erro!</strong> Email ou senha inválida!
-                  </div>
-
-           <?php    } ?>
                 
                   <label class="custom-control-label" for="customCheck1">Lembrar Senha</label>
                 </div>
@@ -66,8 +47,41 @@
               <button onclick="window.location.href='../Cadastros/cadastroUsuario.php';" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="button">
 					Cadastrar
 			  </button>
-              <a class="small" href="#">Esqueceu a Senha?</a></div>
-				
+              <a class="small" onclick="redEmail()" href="#">Esqueceu a Senha?</a></div>
+				<script>
+        function redEmail() {
+          var x = window.confirm("Clique em OK para dar continuidade no processo de redefinição de senha.")
+        if(x == true){
+
+          var nome = window.prompt("Insira seu e-mail para que possamos entrar enviar um link de redefinição de senha.")
+          
+          if(nome != "" && x != true){
+
+            alert("E-mail enviado com sucesso! Verifique sua caixa de entrada ou sua lista de spam.")
+
+          }else{
+while(nome == "")
+
+             nome = window.prompt("Por favor insira seu e-mail para que possamos entrar enviar um link de redefinição de senha.")
+
+
+          }
+          
+
+
+
+        }else{
+
+          alert("Cancelado")
+
+
+        }
+        
+        
+        }
+        
+        </script>
+
 				</div>
 			
 			</div>
