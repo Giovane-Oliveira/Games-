@@ -21,16 +21,21 @@
 		<div class="collapse navbar-collapse" id="navbarResponsive">
 			<ul class="navbar-nav ml-auto">
 				<li class="nav-item active">
-					<a class="nav-link" href="#">MEUS JOGOS
+					<a class="nav-link" href="../jogos/jogos.php"">MEUS JOGOS
 						<span class="sr-only">(current)</span>
 					</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link" href="../Principal/usuarios.php">USUÁRIOS</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="../Principal/perfilUsuario.php">PERFIL</a>
-				</li>
+				  <li class="nav-item dropdown ">
+				    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">PERFIL</a>
+				    <div class="dropdown-menu">
+				      <a class="dropdown-item" href="../Principal/perfilUsuario.php">MEU PERFIL</a>
+				      <div class="dropdown-divider"></div>
+				      <a class="dropdown-item" href="#">SAIR</a>
+				    </div>
+				  </li>
 			</ul>
 		</div>
   </div>
