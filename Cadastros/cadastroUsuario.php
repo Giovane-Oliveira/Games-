@@ -151,7 +151,7 @@
 							</div>
 																
 							<div class="form-label-group text-center ">
-								<input type="file" name="imagem" value="Carregar Imagem"> <br />
+								<input type="file" name="imagem" value="Carregar Imagem" required> <br />
 							</div>
 																		
 							<br>
