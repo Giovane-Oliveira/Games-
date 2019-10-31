@@ -1,5 +1,8 @@
 
-<?php include '../config/conexao.php';?>
+<?php include '../config/conexao.php';
+if($_SESSION['logado'] == true){
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -92,7 +95,8 @@
 </body>
 </html>
 
+<?php }else {
 
-<!-- Navigation -->
-
-<!-- /.container -->
+  header('Location: ../login/index.php');
+  
+} ?>
