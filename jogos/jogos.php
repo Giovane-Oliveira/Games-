@@ -51,7 +51,7 @@
           </table>
 
           
-          <a class="btn btn-dark btn-lg btn-block" href="#" role="button">Cadastrar Jogo</a>
+          <a class="btn btn-dark btn-lg btn-block" href="../Cadastros/cadastroGames.php" role="button">Cadastrar Jogo</a>
       </div>
     </div>
 
