@@ -47,41 +47,7 @@
               <button onclick="window.location.href='../Cadastros/cadastroUsuario.php';" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="button">
 					Cadastrar
 			  </button>
-              <a class="small" onclick="redEmail()" href="#">Esqueceu a Senha?</a></div>
-				<script>
-        function redEmail() {
-          var x = window.confirm("Clique em OK para dar continuidade no processo de redefinição de senha.")
-        if(x == true){
-
-          var nome = window.prompt("Insira seu e-mail para que possamos entrar enviar um link de redefinição de senha.")
-          
-          if(nome != "" && x != true){
-
-            alert("E-mail enviado com sucesso! Verifique sua caixa de entrada ou sua lista de spam.")
-
-          }else{
-while(nome == "")
-
-             nome = window.prompt("Por favor insira seu e-mail para que possamos entrar enviar um link de redefinição de senha.")
-
-
-          }
-          
-
-
-
-        }else{
-
-          alert("Cancelado")
-
-
-        }
-        
-        
-        }
-        
-        </script>
-
+              <a class="small" onclick="redEmail()" href="http://127.0.0.1/Games-/Login/red_senha.html">Esqueceu a Senha?</a></div>
 				</div>
 			
 			</div>

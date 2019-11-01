@@ -9,7 +9,6 @@
 		<meta charset="UTF-8">
 		<meta name="description" content="Curso de Sistemas de Informação">
 		<meta name="keywords" content="ULBRA, SI, Cachoeira do Sul">
-		<meta name="author" content="Maurilio Dener,...">
 	</head>
 </html>
 
@@ -44,7 +43,7 @@ if(mysqli_num_rows ($result) > 0 )
 	$_SESSION['logado'] = true;
 	
 ?> <script>
-alert("Seja bem-vindo ao Alpha Games")
+alert("Seja bem-vindo ao Alpha Games!")
 window.location.assign('../Principal/home.php')
 </script> <?php
 
