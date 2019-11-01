@@ -64,7 +64,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 						</a>
 					
                        <?php if($resultado['disponivel'] == 0){  ?>
-                        <a class="btn btn-outline-success" href="../jogos/solicitarEmprestimo.php" role="button">Solicitar Emprestimo</a>
+                        <a class="btn btn-outline-success" href="../jogos/solicitarEmprestimo.php?id=<?php echo $resultado['id'];?>" role="button">Solicitar Emprestimo</a>
                         <?php }else{ ?>
                         <button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
 

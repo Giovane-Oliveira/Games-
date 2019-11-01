@@ -22,6 +22,12 @@ if($_SESSION['logado'] == true){
 
   include '../principal/barraNavegacao.php';
 
+  $id=$_GET['id'];
+    
+    $sql = "SELECT * FROM game where id='$id'";
+    $result = mysqli_query($conecta, $sql);
+    $resultado = mysqli_fetch_assoc($result);
+
 ?> 
 
 <!-- CORPO PRINCIPAL -->
@@ -36,14 +42,15 @@ if($_SESSION['logado'] == true){
       <div class="p-3 mb-2 bg-light text-dark text-center">
             <img src="../<?php echo $resultado['imgCapa'] ?>" width="400" height="400">
       </div>
+      <p><?php echo $resultado['descricao'] ?></p>
+      <a class="btn btn-dark btn-lg btn-block" href="../Cadastros/cadastroGames.php" role="button">Cadastrar Jogo</a>
     </div>
     <div class="col">
-      2 of 2
+      
+
+
+                
     </div>
-  </div>
-
-
-</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
