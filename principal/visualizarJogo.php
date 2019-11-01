@@ -60,8 +60,12 @@
 						<a href="home.php">
 							<button type="button" class="btn btn-outline-success">Voltar</button>
 						</a>
-					
+						<?php if($resultado['disponivel'] == 0){  ?>
 						<button type="button" class="btn btn-outline-success ">Solicitar Emprestimo</button>
+						<?php }else{ ?>
+						<button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
+
+						<?php } ?>
 						<br>
 						<br>
 					</div>
