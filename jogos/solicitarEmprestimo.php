@@ -1,5 +1,8 @@
 
-<?php include '../config/conexao.php';?>
+<?php include '../config/conexao.php';
+if($_SESSION['logado'] == true){
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -15,44 +18,38 @@
 <body>
 
 <!-- BARRA DE NAVEGAÇÃO -->
- <?php
+<?php
 
   include '../principal/barraNavegacao.php';
+
+  $id=$_GET['id'];
+    
+    $sql = "SELECT * FROM game where id='$id'";
+    $result = mysqli_query($conecta, $sql);
+    $resultado = mysqli_fetch_assoc($result);
 
 ?> 
 
 <!-- CORPO PRINCIPAL -->
 
+<div  class="container" align="center"> 
 
-
-    <div class="col-6">
-      <h1>Jogos</h1>
-      <div class="tableUsuarios"> 
-        <table class="table">
-          
-          <thead class="thead-dark">
-          <tr>
-              <th scope="col">Img</th>
-              <th scope="col">Nome</th>
-              <th scope="col">Descrição</th>
-              <th scope="col">Status</th>
-              <th scope="col">Editar</th>
-          </tr>
-          </thead>
-          <tbody>
-
-                      <?php
-
-                       include 'buscaJogosUsuarioBarra.php'
-
-                      ?>
-
-            </tbody>
-          </table>
-
-          
-          <a class="btn btn-dark btn-lg btn-block" href="../Cadastros/cadastroGames.php" role="button">Cadastrar Jogo</a>
+  <div class="row">
+    <div class="col">
+      <div class="p-3 mb-2 bg-light text-dark text-center">
+            <h1><?php echo $resultado['nomeGame'] ?></h1>
       </div>
+      <div class="p-3 mb-2 bg-light text-dark text-center">
+            <img src="../<?php echo $resultado['imgCapa'] ?>" width="400" height="400">
+      </div>
+      <p><?php echo $resultado['descricao'] ?></p>
+      <a class="btn btn-dark btn-lg btn-block" href="../Cadastros/cadastroGames.php" role="button">Cadastrar Jogo</a>
+    </div>
+    <div class="col">
+      
+
+
+                
     </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -61,7 +58,8 @@
 </body>
 </html>
 
+<?php }else {
 
-<!-- Navigation -->
-
-<!-- /.container -->
+  header('Location: ../login/index.php');
+  
+} ?>

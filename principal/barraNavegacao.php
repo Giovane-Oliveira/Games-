@@ -33,7 +33,7 @@
 				    <div class="dropdown-menu">
 				      <a class="dropdown-item" href="../Principal/perfilUsuario.php">MEU PERFIL</a>
 				      <div class="dropdown-divider"></div>
-				      <a class="dropdown-item" href="#">SAIR</a>
+				      <a class="dropdown-item" href="../login/sair.php">SAIR</a>
 				    </div>
 				  </li>
 			</ul>
