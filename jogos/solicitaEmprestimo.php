@@ -8,7 +8,7 @@ $consulta_game = "SELECT * FROM game WHERE genero_id = '$id';";
 $resultado_game = mysqli_query($conecta, $consulta_game);
 $resultado = mysqli_fetch_array($resultado_game);
 
-$sql = "INSERT INTO solicitacao (data, usuario_id, game_id) VALUES ('$data', '$usuario', '$id');";
+$sql = "INSERT INTO solicitacao (data, usuario_id, game_id) VALUES ('$data', '$usuario', '$id', '3');";
 mysqli_query($conecta, $sql)
 
 
