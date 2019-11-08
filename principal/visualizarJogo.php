@@ -61,11 +61,11 @@
 							<button type="button" class="btn btn-outline-success">Voltar</button>
 						</a>
 						<?php if($resultado['disponivel'] == 0){  ?>
-						<button type="button" class="btn btn-outline-success ">Solicitar Emprestimo</button>
-						<?php }else{ ?>
-						<button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
+                        <a class="btn btn-outline-success" href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" role="button">Solicitar Emprestimo</a>
+                        <?php }else{ ?>
+                        <button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
 
-						<?php } ?>
+                        <?php } ?>
 						<br>
 						<br>
 					</div>

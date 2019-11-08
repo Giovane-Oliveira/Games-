@@ -27,6 +27,7 @@ if($_SESSION['logado'] == true){
     $sql = "SELECT * FROM game where id='$id'";
     $result = mysqli_query($conecta, $sql);
     $resultado = mysqli_fetch_assoc($result);
+    $resultado_id = $resultado['id']
 
 ?> 
 
@@ -43,7 +44,10 @@ if($_SESSION['logado'] == true){
             <img src="../<?php echo $resultado['imgCapa'] ?>" width="400" height="400">
       </div>
       <p><?php echo $resultado['descricao'] ?></p>
-      <a class="btn btn-dark btn-lg btn-block" href="../Cadastros/cadastroGames.php" role="button">Cadastrar Jogo</a>
+
+      <a class="btn btn-dark btn-lg btn-block" href="solicitaEmprestimo.php?idJogo=<?php echo($resultado_id)?>" role="button">Solicitar Emprestimo</a>
+      <p></p>
+      <p></p>
     </div>
     <div class="col">
       

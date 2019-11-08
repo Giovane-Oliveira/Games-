@@ -47,7 +47,7 @@
               <button onclick="window.location.href='../Cadastros/cadastroUsuario.php';" class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="button">
 					Cadastrar
 			  </button>
-              <a class="small" onclick="redEmail()" href="http://127.0.0.1/Games-/Login/red_senha.html">Esqueceu a Senha?</a></div>
+              <a class="small" onclick="redEmail()" href="red_senha.html">Esqueceu a Senha?</a></div>
 				</div>
 			
 			</div>
