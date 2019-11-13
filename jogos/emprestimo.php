@@ -75,10 +75,7 @@ if($_SESSION['logado'] == true){
 </div>
 
     
-    <?php
-    echo $_SESSION['solicitado'];
-      if ($_SESSION['solicitado']){
-      ?>
+   
         <div class="modal" tabindex="-1" role="dialog">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -99,8 +96,7 @@ if($_SESSION['logado'] == true){
           </div>
         </div>
 
-    <?php  }
-    ?>
+   
       
 
 
