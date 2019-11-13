@@ -1,6 +1,6 @@
-
-<?php include '../config/conexao.php';
-if($_SESSION['logado'] == true){
+<?php
+	include '../config/conexao.php';
+	if($_SESSION['logado'] == true){
 
 ?>
 
@@ -14,6 +14,10 @@ if($_SESSION['logado'] == true){
   <meta name="keywords" content="ULBRA, SI, Cachoeira do Sul">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
+  <!-- estilo css do chat -->
+  <link rel="stylesheet" type="text/css" href="css/estilos.css" />
+  
+  <script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body>
 
@@ -27,7 +31,7 @@ if($_SESSION['logado'] == true){
     $sql = "SELECT * FROM game where id='$id'";
     $result = mysqli_query($conecta, $sql);
     $resultado = mysqli_fetch_assoc($result);
-    $resultado_id = $resultado['id']
+    $resultado_id = $resultado['id'];
 
 ?> 
 
@@ -102,6 +106,39 @@ if($_SESSION['logado'] == true){
 
                 
     </div>
+	
+	<!-- CHAT -->
+  <span class="usuarioLogado" id="<?php echo $_SESSION['id'] ?>"></span>
+	<div class="window" id="janela_x">
+		<div class="body">
+			<div class="mensagens" id="mensagens">
+				<ul>
+					<li class="eu">
+						<p>
+							Este e um exemplo de msg que aparecera na pagina!!!
+						</p>
+					</li>
+					<li class="">
+						<div class="imgSmall">
+							<img src="../Imagens/user/user2.png" border="0" />
+						</div>
+						<p>
+							Este é um exemplo de msg que aparecerá na página!!!!
+						</p>
+					</li>
+					
+				</ul>
+			</div>
+			<div class="send_message">
+				<form enctype="multipart/form-data" name="chat" action="#" method="POST">
+					<input type="hidden" name="id_de" class="id_de" value="<?php echo $_SESSION['id'];?>" />
+					<input type="hidden" name="id_para" class="id_para" value="<?php echo $resultado['usuario_id'];?>"/>
+					<input type="text" name="mensagem" class="enviaMsg" />
+					<button type="submit" value="Enviar">Enviar</button>
+				</form>
+			</div>
+		</div>
+	</div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
@@ -109,8 +146,26 @@ if($_SESSION['logado'] == true){
 </body>
 </html>
 
-<?php }else {
+<?php 
+	}else {
 
-  header('Location: ../login/index.php');
+		header('Location: ../login/index.php');
   
-} ?>
+	}
+	
+	if(isset($_POST['mensagem'])){
+
+		$mensagem = utf8_decode( strip_tags(trim(filter_input(INPUT_POST, 'mensagem', FILTER_SANITIZE_STRING))) );
+		$de = (int)$_POST['id_de'];
+		$para = (int)$_POST['id_para'];
+
+		if($mensagem != ''){
+			$insert = "INSERT INTO chat (id_de, id_para, mensagem) VALUES ('".$de."', '".$para."', '".$mensagem."')";
+			if ($conecta->query($insert) === TRUE){
+				//echo "ok";
+			}else{
+				echo "Error: " . $insert . "<br />" . $conecta->error;
+			}
+		}
+	}
+?>
