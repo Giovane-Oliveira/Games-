@@ -33,6 +33,8 @@
     $resultado = mysqli_fetch_assoc($result);
     $resultado_id = $resultado['id'];
 
+
+
 ?> 
 
 <!-- CORPO PRINCIPAL -->
@@ -42,27 +44,38 @@
   <div class="row">
     <div class="col">
       <div class="p-3 mb-2 bg-light text-dark text-center">
-            <h1><?php echo $resultado['nomeGame'] ?></h1>
+            <h1><?php echo $resultado['nomeGame']; ?></h1>
       </div>
       <div class="p-3 mb-2 bg-light text-dark text-center">
             <img src="../<?php echo $resultado['imgCapa'] ?>" width="400" height="400">
       </div>
-      <p><?php echo $resultado['descricao'] ?></p>
+      <p><?php echo $resultado['descricao']; ?></p>
 
-      <a class="btn btn-dark btn-lg btn-block" href="solicitaEmprestimo.php?idJogo=<?php echo($resultado_id)?>" role="button" data-toggle="modal" data-target="#exampleModal">Solicitar Emprestimo</a>
+      <?php
+      
+
+       if ($resultado['disponivel'] == 1){
+        
+        
+      ?>
+
+      <a class="btn btn-outline-success" role="button" >Emprestimo solicitado</a>
+        
+
+        <?php }else {?>
+
+      <a class="btn btn-dark btn-lg btn-block" href="" role="button" data-toggle="modal" data-target="#exampleModal">Solicitar </a>
+
+      <?php }?>
       <p></p>
       <p></p>
     </div>
-    <div class="col">
-
-
-
-<!-- Modal -->
+  <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Solicitar Emprestimo Jogo</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -78,67 +91,45 @@
   </div>
 </div>
 
-    
-   
-        <div class="modal" tabindex="-1" role="dialog">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-                <p>Modal body text goes here.</p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-   
-      
 
 
-                
-    </div>
-	
-	<!-- CHAT -->
+
+
+<div class="col">
+
+
+	 <!-- CHAT -->
   <span class="usuarioLogado" id="<?php echo $_SESSION['id'] ?>"></span>
-	<div class="window" id="janela_x">
-		<div class="body">
-			<div class="mensagens" id="mensagens">
-				<ul>
-					<li class="eu">
-						<p>
-							Este e um exemplo de msg que aparecera na pagina!!!
-						</p>
-					</li>
-					<li class="">
-						<div class="imgSmall">
-							<img src="../Imagens/user/user2.png" border="0" />
-						</div>
-						<p>
-							Este é um exemplo de msg que aparecerá na página!!!!
-						</p>
-					</li>
-					
-				</ul>
-			</div>
-			<div class="send_message">
-				<form enctype="multipart/form-data" name="chat" action="#" method="POST">
-					<input type="hidden" name="id_de" class="id_de" value="<?php echo $_SESSION['id'];?>" />
-					<input type="hidden" name="id_para" class="id_para" value="<?php echo $resultado['usuario_id'];?>"/>
-					<input type="text" name="mensagem" class="enviaMsg" />
-					<button type="submit" value="Enviar">Enviar</button>
-				</form>
-			</div>
-		</div>
-	</div>
+  <div class="window" id="janela_x">
+    <div class="body">
+      <div class="mensagens" id="mensagens">
+        <ul>
+          <li class="eu">
+            <p>
+              Este e um exemplo de msg que aparecera na pagina!!!
+            </p>
+          </li>
+          <li class="">
+            <div class="imgSmall">
+              <img src="../Imagens/user/user2.png" border="0" />
+            </div>
+            <p>
+              Este é um exemplo de msg que aparecerá na página!!!!
+            </p>
+          </li>
+          
+        </ul>
+      </div>
+      <div class="send_message">
+        <form enctype="multipart/form-data" name="chat" action="#" method="POST">
+          <input type="hidden" name="id_de" class="id_de" value="<?php echo $_SESSION['id'];?>" />
+          <input type="hidden" name="id_para" class="id_para" value="<?php echo $resultado['usuario_id'];?>"/>
+          <input type="text" name="mensagem" class="enviaMsg" />
+          <button type="submit" value="Enviar">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
