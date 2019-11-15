@@ -106,7 +106,19 @@
         <ul>
           <li class="eu">
             <p>
-              Este e um exemplo de msg que aparecera na pagina!!!
+              <?php  
+
+              
+$user1 = $_SESSION['id'];
+    $sql = "SELECT * FROM chat where id_de='$user1'";
+    $result = mysqli_query($conecta, $sql);
+    $a = mysqli_fetch_assoc($result);
+    $mensagem1 = $a['mensagem']; 
+
+      echo $mensagem1;
+    
+
+    ?>
             </p>
           </li>
           <li class="">
@@ -114,7 +126,14 @@
               <img src="../Imagens/user/user2.png" border="0" />
             </div>
             <p>
-              Este é um exemplo de msg que aparecerá na página!!!!
+<?php
+$user2 = $resultado['usuario_id'];
+            $sql = "SELECT * FROM chat where id_para='$user2'";
+    $result = mysqli_query($conecta, $sql);
+    $b = mysqli_fetch_assoc($result);
+    $mensagem2 = $b['mensagem']; 
+    echo $mensagem2;
+               ?>
             </p>
           </li>
           
