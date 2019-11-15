@@ -68,6 +68,7 @@ if($_SESSION['logado'] == true){
                       <tr>
                         <th scope="col"></th>
                         <th scope="col">Usuarios</th>
+						            <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody>
