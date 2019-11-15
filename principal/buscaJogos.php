@@ -1,20 +1,21 @@
 <?php
+$idUsuario = $_SESSION['id'];
 
 if(isset($_POST['pesquisar'])){
 
 $pesquisar = $_POST['pesquisar'];
-$consulta_game = "SELECT * FROM game WHERE nomeGame LIKE '%$pesquisar%';";
+$consulta_game = "SELECT * FROM game WHERE nomeGame LIKE '%$pesquisar%' AND usuario_id != '$idUsuario' order by id desc;";
 $resultado_game = mysqli_query($conecta, $consulta_game);
 
 }else if(isset($_GET['idGenero'])){
 
 $id_genero = $_GET['idGenero'];
-$consulta_game = "SELECT * FROM game WHERE genero_id = '$id_genero';";
+$consulta_game = "SELECT * FROM game WHERE genero_id = '$id_genero' AND usuario_id != '$idUsuario' order by id desc;";
 $resultado_game = mysqli_query($conecta, $consulta_game);
 
 }else{
 
-$consulta_game = "SELECT * FROM game;";
+$consulta_game = "SELECT * FROM game WHERE usuario_id != '$idUsuario' order by id desc;";
 $resultado_game = mysqli_query($conecta, $consulta_game);
 
 }
@@ -59,8 +60,8 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
                 
 				<div class="border-0  card w-50">
 					<div >
-						<a href="visualizarJogo.php?id=<?php echo $resultado['id'];?>">
-							<button type="button" class="btn btn-outline-success float-left">Visualizar</button>
+						<a class="btn btn-outline-success float-left" href="visualizarJogo.php?id=<?php echo $resultado['id'];?>">
+							Visualizar
 						</a>
 					
                        <?php if($resultado['disponivel'] == 0){  ?>
