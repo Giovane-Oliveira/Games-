@@ -35,11 +35,10 @@ if($_SESSION['logado'] == true){
                  <br>
                   <table class="table">
                     <thead class="thead-dark">
-                      <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Games</th>
-                      </tr>
-                    </thead>
+					<tr>						
+						<th class="text-center">Games</th>
+					</tr>
+				</thead>
                     <tbody>
 
                     <?php
@@ -51,32 +50,22 @@ if($_SESSION['logado'] == true){
                   </table>
                   </div>
 
-                   <?php
-
-                      
+                   <?php                    
                         include 'buscaJogos.php';
-                      
-
-              
                     ?>
-
 
                 <div class="col">
                 <br>
                  <table class="table">
                     <thead class="thead-dark">
-                      <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Usuarios</th>
-						            <th scope="col"></th>
-                      </tr>
-                    </thead>
+			<tr>
+				<th class="text-center">Usuarios</th>
+			</tr>
+		    </thead>
                     <tbody>
 
                     <?php
-
                       include 'buscaUsuarios.php';
-
                     ?>
 
                     </tbody>
