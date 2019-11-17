@@ -50,10 +50,12 @@ $resultado = mysqli_fetch_array($result);
 		</div>
 		<hr>
 		<p>
-			<a href="../usuarios/editarDadosUsuario.php" >
-				<button type="button" class="btn btn-outline-success">Editar Informações</button>
-			</a>
-			
+			<?php
+				if($resultado['id'] == $_SESSION['id']){?>			
+					<a href="../usuarios/editarDadosUsuario.php" >
+						<button type="button" class="btn btn-outline-success">Editar Informações</button>
+					</a>
+				<?php } ?>
 			<a class="dropdown-item" href="../login/sair.php">
 				<button type="button" class="btn btn-danger">Sair</button>
 			</a>
