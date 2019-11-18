@@ -66,11 +66,11 @@ ul{
 }
 .mensagens ul li p{
 	font:13px tahoma, arial;
-	color:#666;
+	color: #232121;
 }
 .mensagens ul li.eu{
 	float:left;
-	background:#a4e9ff;
+	background:#5797cc;
 }
 .window .body .send_message{
 	float:left;
