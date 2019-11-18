@@ -34,7 +34,6 @@
     $resultado_id = $resultado['id'];
 
 
-
 ?> 
 
 <!-- CORPO PRINCIPAL -->
@@ -103,41 +102,81 @@
   <div class="window" id="janela_x">
     <div class="body">
       <div class="mensagens" id="mensagens">
-        <ul>
-          <li class="eu">
-            <p>
-              <?php  
-
-              
-$user1 = $_SESSION['id'];
-    $sql = "SELECT * FROM chat where id_de='$user1'";
-    $result = mysqli_query($conecta, $sql);
-    $a = mysqli_fetch_assoc($result);
-    $mensagem1 = $a['mensagem']; 
-
-      echo $mensagem1;
-    
-
-    ?>
-            </p>
-          </li>
-          <li class="">
-            <div class="imgSmall">
-              <img src="../Imagens/user/user2.png" border="0" />
-            </div>
-            <p>
 <?php
-$user2 = $resultado['usuario_id'];
-            $sql = "SELECT * FROM chat where id_para='$user2'";
-    $result = mysqli_query($conecta, $sql);
-    $b = mysqli_fetch_assoc($result);
-    $mensagem2 = $b['mensagem']; 
-    echo $mensagem2;
-               ?>
-            </p>
-          </li>
-          
-        </ul>
+	if($_SESSION['id'] != $resultado['usuario_id']){
+		$sql = "SELECT * FROM chat WHERE (id_de = $_SESSION[id] AND id_para = $resultado[usuario_id]) or (id_de = $resultado[usuario_id] AND id_para = $_SESSION[id]) ORDER BY id asc ";
+		$resultChat = mysqli_query($conecta, $sql);
+?>
+		<ul>
+<?php		
+		while($row = mysqli_fetch_assoc($resultChat)){
+			if($row['id_de'] == $_SESSION['id']){
+
+?>	
+			
+				<li class="eu">
+					<p>
+						<?php 
+								echo $row['mensagem'];
+						?>
+					</p>
+				</li>
+		<?php 
+			} 
+			else if($row['id_de'] != $_SESSION['id']){
+		?>
+				<li class="">
+					<p>
+						<?php
+							echo $row['mensagem'];
+						?>
+					</p>
+				</li>
+<?php
+			}
+		}
+?>
+		</ul>
+<?php
+	} elseif($_SESSION['id'] == $resultado['usuario_id']){
+		$sql1 = "SELECT * FROM chat WHERE (id_de = 2 AND id_para = 4) or (id_de = 4 AND id_para = 2) ORDER BY id asc ";
+		$resultChat2 = mysqli_query($conecta, $sql1);
+?>
+		<ul>
+<?php		
+		while($row2 = mysqli_fetch_assoc($resultChat2)){
+			if($row2['id_de'] == $_SESSION['id']){
+
+?>	
+			
+				<li class="eu">
+					<p>
+						<?php 
+								echo $row2['mensagem'];
+						?>
+					</p>
+				</li>
+		<?php 
+			} 
+			else if($row2['id_de'] != $_SESSION['id']){
+		?>
+				<li class="">
+					<p>
+						<?php
+							echo $row2['mensagem'];
+						?>
+					</p>
+				</li>
+<?php
+			}
+		}
+?>
+		</ul>
+<?php
+	}
+?>
+
+
       </div>
       <div class="send_message">
         <form enctype="multipart/form-data" name="chat" action="#" method="POST">
