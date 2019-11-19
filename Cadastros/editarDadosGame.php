@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <title>Alpha Games</title>
-  <meta charset="UTF-8">
-  
-  <meta name="description" content="Curso de Sistemas de Informação">
-  <meta name="keywords" content="ULBRA, SI, Cachoeira do Sul">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="../estilos/estilos.css" />
 </head>
 
-		<!-- CORPO PRINCIPAL -->
-			<?php
-				include '../Principal/barraNavegacao.php';
-			?>
+	<?php
+
+		include_once('../Config/conexao.php');
+		session_start();
+		include '../Principal/barraNavegacao.php';
+		
+		if(isset($_GET['idUsuario'])){
+
+			$idUsuario = $_GET['idUsuario'];	
+			
+			$consulta_game = "SELECT * FROM game WHERE usuario_id = $idUsuario;";
+			$resultado_game = mysqli_query($conecta, $consulta_game);
+			
+			
+			}else{
+			
+			$consulta_game = "SELECT * FROM game WHERE usuario_id = $_SESSION[id];";
+			$resultado_game = mysqli_query($conecta, $consulta_game);
+			
+			} 
+	?>
+
+		<?php while ($resultado = mysqli_fetch_array($resultado_game)){ ?>
 		  <div class="login d-flex align-items-center py-4">
 			<div class="container-fluid">					
 				<div id="divCadastroUsuario" class="col-md-9 col-lg-8 mx-auto">
 					<div class="p-3 mb-2 bg-light text-dark text-center">
 						<div class="card">
-						<img src="../Imagens/Logo.png" class="rounded mx-auto d-block" alt="Logo não encontrado" width="140" >
-						CADASTRAR JOGO:<br/><br/>	
-						
-						<form enctype="multipart/form-data" name="cadastroGames" action="cadastroGames_valid.php" method="POST">
-																			
-							<div class="form-label-group">
-								<input type="text" id="inputNomeGame" name="nomeGame" class="form-control" placeholder="Nome do jogo" required /> <br>
-							</div>
 
+						<img src="../<?php echo $resultado['imgCapa'] ?>" alt="Foto Game" class="rounded mx-auto d-block" width="140" >
+
+						EDITAR JOGO:<br/><br/>	
+						<form enctype="multipart/form-data" name="cadastroGames" action="editarGame_valid.php" method="POST">
+							
+							<div class="form-label-group">
+								<input type="text" id="inputNomeGame" name="nomeGame" class="form-control" placeholder="Nome do jogo" value ="<?php echo $resultado['nomeGame']; ?>" required /> <br>
+							</div>
 							<div class="row">
 								<div class="form-label-group col">
-									<select name="genero" class="form-control">
+									<select name="genero" value="<?php echo $resultado['genero_id']?>" class="form-control" >
 										<option value="1" name="genero" selected="selected">Ação</option>
 										<option value="2" name="genero" >Aventura</option>
 										<option value="3" name="genero" >Luta</option>
@@ -49,11 +64,9 @@
 
 							<div class= "row">
 								<div class="form-group form-label-group col">
-									<textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" placeholder=" Descricao do jogo" rows="5"></textarea>
+									<textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" placeholder="Descricao do jogo" value ="<?php echo $resultado['descricao'];?>" rows="5"></textarea>
 								</div>
 							</div>
-														
-																
 							<div class="form-label-group text-center ">
 								<input type="file" name="imagem" value="Carregar Imagem" required> <br />
 							</div>
@@ -65,14 +78,15 @@
 									<button type="button" class="btn btn-outline-success">Voltar</button>
 								</a>		
 								&nbsp&nbsp	
-								<button class="btn btn-primary" type="submit" value="Cadastrar">
-										Cadastrar
+								<button class="btn btn-primary" type="submit" value="Editar">
+										Editar
 								</button>
 							</div>
 							<br>
 						</form>
 					</div>	</div>
 				</div>
+			<?php } ?>
 			</div>
 		</div>
 		<?php
