@@ -23,7 +23,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       <td><?php echo $resultado['nomeGame']; ?></td>
       <td><?php echo $resultado['descricao']; ?></td>
       <td><?php if($resultado['disponivel'] == 0){echo 'Disponivel';}else{ echo 'Ocupado';} ?></td>
-      <td><a href="../Cadastros/editarDadosGame.php<?php echo($jogo_id)?>"><img src="../imagens/icon/iconEditar.png" width="15" height="15"></a></td>
+      <td><a href="../Cadastros/editarDadosGame.php?jogo_id=<?php echo($resultado['id'])?>"><img src="../imagens/icon/iconEditar.png" width="15" height="15"></a></td>
 	</tr>
   <?php } ?>
       	
