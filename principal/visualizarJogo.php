@@ -57,15 +57,19 @@
 				
 					<!--- botões voltar e solicitar -->  
 					<div class="col">
-						<a href="home.php">
-							<button type="button" class="btn btn-outline-success">Voltar</button>
-						</a>
+						<form action="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" method="POST">
+							<input type="hidden" name="id_Conversa" class="id_Conversa" value="<?php if($_SESSION['id'] != $resultado['usuario_id']){echo $_SESSION['id'];}?>" />
+							<a href="home.php">
+								<button type="button" class="btn btn-outline-success">Voltar</button>
+							</a>
 						<?php if($resultado['disponivel'] == 0){  ?>
-                        <a class="btn btn-outline-success" href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" role="button">Solicitar Emprestimo</a>
+							<a href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>">
+								<input type="submit" class="btn btn-outline-success" value="Solicitar Emprestimo" />
+							</a>
                         <?php }else{ ?>
                         <button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
-
                         <?php } ?>
+						</form>
 						<br>
 						<br>
 					</div>
