@@ -28,13 +28,14 @@
 			} 
 	?>
 
-		<?php while ($resultado = mysqli_fetch_array($resultado_game)){ ?>
+		
 		  <div class="login d-flex align-items-center py-4">
 			<div class="container-fluid">					
 				<div id="divCadastroUsuario" class="col-md-9 col-lg-8 mx-auto">
 					<div class="p-3 mb-2 bg-light text-dark text-center">
 						<div class="card">
 
+						<?php while ($resultado = mysqli_fetch_array($resultado_game)){ ?>
 						<img src="../<?php echo $resultado['imgCapa'] ?>" alt="Foto Game" class="rounded mx-auto d-block" width="140" >
 
 						EDITAR JOGO:<br/><br/>	
@@ -64,9 +65,10 @@
 
 							<div class= "row">
 								<div class="form-group form-label-group col">
-									<textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" placeholder="Descricao do jogo" value ="<?php echo $resultado['descricao'];?>" rows="5"></textarea>
+									<textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" placeholder="Descricao do jogo"  rows="5"><?php echo $resultado['descricao'];?> </textarea>
 								</div>
 							</div>
+							<?php } ?>
 							<div class="form-label-group text-center ">
 								<input type="file" name="imagem" value="Carregar Imagem" required> <br />
 							</div>
@@ -86,7 +88,7 @@
 						</form>
 					</div>	</div>
 				</div>
-			<?php } ?>
+			
 			</div>
 		</div>
 		<?php
