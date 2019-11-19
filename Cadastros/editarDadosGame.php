@@ -22,9 +22,9 @@
 			
 			}else{
 			
-			$consulta_game = "SELECT * FROM game WHERE usuario_id = $_SESSION[id];";
+			$consulta_game = "SELECT * FROM game WHERE id = $_GET[jogo_id];";
 			$resultado_game = mysqli_query($conecta, $consulta_game);
-			
+			$resultado = mysqli_fetch_array($resultado_game);
 			} 
 	?>
 
@@ -35,7 +35,6 @@
 					<div class="p-3 mb-2 bg-light text-dark text-center">
 						<div class="card">
 
-						<?php while ($resultado = mysqli_fetch_array($resultado_game)){ ?>
 						<img src="../<?php echo $resultado['imgCapa'] ?>" alt="Foto Game" class="rounded mx-auto d-block" width="140" >
 
 						EDITAR JOGO:<br/><br/>	
@@ -68,7 +67,7 @@
 									<textarea class="form-control" id="exampleFormControlTextarea1" name="descricao" placeholder="Descricao do jogo"  rows="5"><?php echo $resultado['descricao'];?> </textarea>
 								</div>
 							</div>
-							<?php } ?>
+							
 							<div class="form-label-group text-center ">
 								<input type="file" name="imagem" value="Carregar Imagem" required> <br />
 							</div>
@@ -79,10 +78,9 @@
 								<a href="../Principal/perfilUsuario.php">
 									<button type="button" class="btn btn-outline-success">Voltar</button>
 								</a>		
-								&nbsp&nbsp	
-								<button class="btn btn-primary" type="submit" value="Editar">
-										Editar
-								</button>
+								
+								<button class="btn btn-primary" type="submit" value="Editar">Editar</button>
+
 							</div>
 							<br>
 						</form>
