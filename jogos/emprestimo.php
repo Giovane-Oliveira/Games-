@@ -29,7 +29,6 @@
 
   include '../principal/barraNavegacao.php';
   $id=$_GET['id'];
-  $idConversa = $_POST['id_Conversa'];
   
     $sql = "SELECT * FROM game where id='$id'";
     $result = mysqli_query($conecta, $sql);
@@ -106,7 +105,6 @@
 
 
 	 <!-- CHAT -->
-  <span class="usuarioLogado" id="<?php echo $_SESSION['id'] ?>"></span>
   <div class="window" id="janela_x">
     <div class="body">
       <div class="mensagens" id="mensagens">
@@ -197,7 +195,13 @@
 																				} 
 																			?>"/>
 				<input type="hidden" name="id_game" class="id_game" value="<?php echo $resultado['id'];?>"/>
-				<input type="hidden" name="id_Conversa" class="id_Conversa" value="<?php echo $resultadoConversa['id_conversa']; ?>"/>
+				<input type="hidden" name="id_Conversa" class="id_Conversa" value="<?php 
+																						if($_SESSION['id'] != $resultado['usuario_id']){
+																							echo $_SESSION['id']; 
+																						} else{
+																							echo $resultadoConversa['id_conversa'];
+																						}
+																					?>"/>
 				<input type="text" name="mensagem" class="enviaMsg" />
 				<button type="submit" value="Enviar">Enviar</button>
         </form>
@@ -228,7 +232,7 @@
 		if($mensagem != ''){
 			$insert = "INSERT INTO chat (id_de, id_para, id_game, id_conversa, mensagem) VALUES ('".$de."', '".$para."','".$game."', '".$idConversa."' , '".$mensagem."')";
 			if ($conecta->query($insert) === TRUE){
-				//echo "ok";
+				echo "<meta http-equiv='refresh' content='1'>";
 			}else{
 				echo "Error: " . $insert . "<br />" . $conecta->error;
 			}
