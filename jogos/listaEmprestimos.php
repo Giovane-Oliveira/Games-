@@ -25,21 +25,20 @@
 	<table class="table">
 	    <thead class="thead-dark">
 	        <tr>
-        		<th scope="col">Data</th>
 				<th scope="col">Nome do Jogo</th>
-				<th scope="col">Jogo</th>
-				<th scope="col">Genero</th>
-				<th scope="col">Nome do Dono</th>
-				<th scope="col">Dono</th>
-				<th scope="col">Status</th>
-
+				<th scope="col">Capa</th>
+				<th scope="col">Data</th>
+				<th scope="col">Solicitante</th>
+				<th scope="col">Foto Perfil</th>
+				<th scope="col">Aprovar</th>
+				<th scope="col">Negar</th>
 	        </tr>
 	            </thead>
 	                <tbody>
 
 	                    <?php
 
-	                      include '../jogos/buscaSolicitacoesJogos.php'
+	                      include '../jogos/buscaEmprestimosJogos.php'
 
 	                    ?>
 
