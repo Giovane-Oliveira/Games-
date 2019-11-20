@@ -28,7 +28,8 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       <td><?php echo $resultado2['data']; ?></td>
       <td><?php echo $resultado3['nome']; ?></td>
       <td><img src="<?php echo $resultado3['imgPerfil'] ?>" alt="Foto Perfil" class="rounded-circle" width="30" height="30"></td>
-
+      <td><button type="button" class="btn btn-success">Aprovar</button></td>
+      <td><button type="button" class="btn btn-danger">Negar</button></td>
       
       
       
