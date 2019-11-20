@@ -1,5 +1,6 @@
 <?php 
 	include '../config/conexao.php';
+	//session_start();
 	$idUsuario = $_SESSION['id'];	
 	$consulta = "SELECT * FROM usuario WHERE id = '$idUsuario';";
 	$result = mysqli_query($conecta, $consulta);
