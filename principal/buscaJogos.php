@@ -57,22 +57,22 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
                 <br>
                 <br>
                 
-                
 				<div class="border-0  card w-50">
-					<div >
+					<form action="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" method="POST">
+						<input type="hidden" name="id_Conversa" class="id_Conversa" value="<?php if($_SESSION['id'] != $resultado['usuario_id']){echo $_SESSION['id'];}?>" />
 						<a class="btn btn-outline-success float-left" href="visualizarJogo.php?id=<?php echo $resultado['id'];?>">
 							Visualizar
 						</a>
-					
-                       <?php if($resultado['disponivel'] == 0){  ?>
-                        <a class="btn btn-outline-success" href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" role="button">Solicitar Emprestimo</a>
-                        <?php }else{ ?>
-                        <button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
-
-                        <?php } ?>
-                        <br>
-                        <br>
-                    </div>
+					<?php if($resultado['disponivel'] == 0){  ?>
+						<a href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>">
+							<input type="submit" class="btn btn-outline-success" value="Solicitar Emprestimo" />
+						</a>
+					<?php }else{ ?>
+					<button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
+					<?php } ?>
+					</form>
+					<br>
+					<br>
 				</div>
                 
 				<hr>

@@ -113,6 +113,8 @@ CREATE TABLE `projetogame`.`chat` (
 	`id` INT(100) NOT NULL AUTO_INCREMENT,
 	`id_de` INT(100) NOT NULL ,
 	`id_para` INT(100) NOT NULL ,
+	`id_game` INT(100) NOT NULL ,
+	`id_interesse` INT(100) ,
 	`mensagem` VARCHAR(255) NOT NULL ,
 	PRIMARY KEY (`id`)
 )	ENGINE = InnoDB;
