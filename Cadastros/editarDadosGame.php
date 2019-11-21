@@ -9,6 +9,7 @@
 	<?php
 
 		include_once('../Config/conexao.php');
+		//session_start();
 		include '../Principal/barraNavegacao.php';
 		
 		if(isset($_GET['idUsuario'])){
@@ -26,6 +27,7 @@
 			$resultado = mysqli_fetch_array($resultado_game);
 			} 
 			
+			$jogo = $_GET['jogo_id'];
 	?>
 
 		
