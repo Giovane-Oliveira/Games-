@@ -107,6 +107,9 @@
 		$sql1 = "SELECT * FROM chat WHERE id_de = $_SESSION[id] AND id_para = $resultado[usuario_id] and id_game = $id and id_conversa = $_SESSION[id] or id_de = $resultado[usuario_id] AND id_para = $_SESSION[id] and id_game = $id and id_conversa = $_SESSION[id] ORDER BY id asc "; 
 		$resultChat = mysqli_query($conecta, $sql1);;
 ?>
+	<div class="p-3 mb-2 bg-light text-dark text-center">
+        <h1>CHAT</h1>
+    </div>
 	<div class="window" id="janela_x">
 		<div class="body">
 			<div class="mensagens" id="mensagens">
