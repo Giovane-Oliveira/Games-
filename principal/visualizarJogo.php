@@ -32,7 +32,7 @@
 						</div>
 						
 						<hr><h5 class="card-title text-left">DESCRIÇÃO:</h5><hr>
-							<h4><?php echo $resultado['descricao'] ?></h4>
+							<?php echo $resultado['descricao'] ?>
 											
 					</div>
 					<!--- fim dados jogo -->    
