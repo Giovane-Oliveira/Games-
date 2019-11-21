@@ -98,7 +98,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <a class="btn btn-primary" href="../jogos/emprestimo.php?id=<?php $resultado['id'];?>" role="button">Sim</a>
+        <a class="btn btn-primary" href="../jogos/liberaEmprestimo.php?id=<?php echo($resultado['id']);?>" role="button">Sim</a>
       </div>
     </div>
   </div>
