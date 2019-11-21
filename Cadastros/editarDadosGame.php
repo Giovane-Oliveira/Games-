@@ -9,7 +9,7 @@
 	<?php
 
 		include_once('../Config/conexao.php');
-		session_start();
+		//session_start();
 		include '../Principal/barraNavegacao.php';
 		
 		if(isset($_GET['idUsuario'])){
@@ -26,6 +26,8 @@
 			$resultado_game = mysqli_query($conecta, $consulta_game);
 			$resultado = mysqli_fetch_array($resultado_game);
 			} 
+			
+			$jogo = $_GET['jogo_id'];
 	?>
 
 		
@@ -33,13 +35,12 @@
 			<div class="container-fluid">					
 				<div id="divCadastroUsuario" class="col-md-9 col-lg-8 mx-auto">
 					<div class="p-3 mb-2 bg-light text-dark text-center">
+						EDITAR JOGO:<br/><br/>
 						<div class="card">
-
-						<img src="../<?php echo $resultado['imgCapa'] ?>" alt="Foto Game" class="rounded mx-auto d-block" width="140" >
-
-						EDITAR JOGO:<br/><br/>	
+						<br>
+						<img src="<?php echo $resultado['imgCapa'] ?>" alt="Foto Game" class="rounded mx-auto d-block" width="200" >
+						<br>	
 						<form enctype="multipart/form-data" name="cadastroGames" action="editarGame_valid.php" method="POST">
-							
 							<div class="form-label-group">
 								<input type="text" id="inputNomeGame" name="nomeGame" class="form-control" placeholder="Nome do jogo" value ="<?php echo $resultado['nomeGame']; ?>" required /> <br>
 							</div>
@@ -69,17 +70,18 @@
 							</div>
 							
 							<div class="form-label-group text-center ">
-								<input type="file" name="imagem" value="Carregar Imagem" required> <br />
+								<input type="file" name="imagem" value=""> <br />
 							</div>
-																		
+							<input type="hidden" name="id_game" VALUE="<?php echo $jogo ?>">
+												
 							<br>
 									
 							<div class="text-center">
-								<a href="../Principal/perfilUsuario.php">
+								<a href="../jogos/jogos.php">
 									<button type="button" class="btn btn-outline-success">Voltar</button>
 								</a>		
 								
-								<button class="btn btn-primary" type="submit" value="Editar">Editar</button>
+								<button class="btn btn-primary" type="submit" value="Editar">Salvar</button>
 
 							</div>
 							<br>

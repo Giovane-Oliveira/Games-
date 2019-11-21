@@ -26,7 +26,7 @@ ul{
 	height:100%;
 }
 .window{
-	float:left;
+	margin-top: 110px;
 	width:270px;
 	margin-left:5px;
 	height:auto;
@@ -39,6 +39,7 @@ ul{
 	background:#ebebeb;
 	border-left:1px solid #999;
 	border-right:1px solid #999;
+	border-top:1px solid #999;
 	height:230px;
 	overflow-y:auto;
 	overflow-x:hidden;
@@ -78,7 +79,7 @@ ul{
 	position:relative;
 }
 .window .body .send_message input{
-	float:left;
+	float:right;
 	width:100%;
 	padding:3px;
 	background:white;
