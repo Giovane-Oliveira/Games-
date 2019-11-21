@@ -47,7 +47,7 @@
             <h1><?php echo $resultado['nomeGame']; ?></h1>
       </div>
       <div class="p-3 mb-2 bg-light text-dark text-center">
-            <img src="../<?php echo $resultado['imgCapa']; ?>" width="400" height="400">
+            <img src="<?php echo $resultado['imgCapa']; ?>" width="400" height="400">
       </div>
       <p><?php echo $resultado['descricao']; ?></p>
 
