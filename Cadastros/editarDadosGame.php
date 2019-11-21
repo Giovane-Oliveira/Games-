@@ -27,7 +27,6 @@
 			$resultado = mysqli_fetch_array($resultado_game);
 			} 
 			
-			$jogo = $_GET[jogo_id];
 	?>
 
 		
