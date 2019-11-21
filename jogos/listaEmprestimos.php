@@ -32,6 +32,8 @@
 				<th scope="col">Foto Perfil</th>
 				<th scope="col">Aprovar</th>
 				<th scope="col">Negar</th>
+				<th scope="col">Emrestimo</th>
+
 	        </tr>
 	            </thead>
 	                <tbody>

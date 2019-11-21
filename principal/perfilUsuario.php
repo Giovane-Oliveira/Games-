@@ -66,7 +66,7 @@
 					</thead>
 					<tbody>
 						<?php
-							include '../jogos/buscaEmprestimosJogos.php'
+							include '../jogos/buscaSolicitacoesJogos.php'
 						?>
 					</tbody>
 				</table>

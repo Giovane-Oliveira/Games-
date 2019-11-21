@@ -1,6 +1,7 @@
 <?php
 
 
+
 $consulta_game = "SELECT * FROM game WHERE usuario_id = $_SESSION[id] and disponivel = '1';";
 $resultado_game = mysqli_query($conecta, $consulta_game);
 
@@ -28,9 +29,73 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       <td><?php echo $resultado2['data']; ?></td>
       <td><?php echo $resultado3['nome']; ?></td>
       <td><img src="<?php echo $resultado3['imgPerfil'] ?>" alt="Foto Perfil" class="rounded-circle" width="30" height="30"></td>
+      <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#aprovarEmprestimo">Aprovar</button></td>
+	  <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#negarEmprestimo">Negar</button></td>
+	  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#disponibilizarJogo">Disponibilizar Jogo</button></td>
 
       
       
       
 	</tr>
+
+	<!-- Modal -->
+<div class="modal fade" id="aprovarEmprestimo" tabindex="-1" role="dialog" aria-labelledby="aprovarEmprestimo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aprovarEmprestimo">Aprovar Emprestimo?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Você realmente deseja aprovar o Emprestimo?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-primary">Aprovar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="negarEmprestimo" tabindex="-1" role="dialog" aria-labelledby="negarEmprestimo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="negarEmprestimo">Negar Emprestimo?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Você realmente deseja Negar o Emprestimo?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
+        <button type="button" class="btn btn-primary">Negar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="disponibilizarJogo" tabindex="-1" role="dialog" aria-labelledby="aprovarEmprestimo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="aprovarEmprestimo">Jogo Liberado para emprestimo?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        O jogo já está disponivel novamente?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-primary">Sim</button>
+      </div>
+    </div>
+  </div>
+</div>
   <?php } ?>
