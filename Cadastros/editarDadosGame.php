@@ -9,7 +9,6 @@
 	<?php
 
 		include_once('../Config/conexao.php');
-		session_start();
 		include '../Principal/barraNavegacao.php';
 		
 		if(isset($_GET['idUsuario'])){
