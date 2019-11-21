@@ -1,3 +1,5 @@
+<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
+<?php header("Content-Type: text/html; charset=ISO-8859-1",true);?>
 <?php
 
 
@@ -9,6 +11,8 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 
 
  while($resultado = mysqli_fetch_array($resultado_game)) {
+
+ 		
 
 		$consulta_solicitacao = "SELECT * FROM solicitacao WHERE game_id = $resultado[id];";
 		$resultado_solicitacao = mysqli_query($conecta, $consulta_solicitacao);
@@ -32,6 +36,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#aprovarEmprestimo">Aprovar</button></td>
 	  <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#negarEmprestimo">Negar</button></td>
 	  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#disponibilizarJogo">Disponibilizar Jogo</button></td>
+	  <td><a class="btn btn-primary" href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" role="button">Chat</a></td>
 
       
       
@@ -53,7 +58,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <button type="button" class="btn btn-primary">Aprovar</button>
+        <a class="btn btn-primary" href="../principal/home.php" role="button">Aprovar Emprestimo</a>
       </div>
     </div>
   </div>
@@ -73,7 +78,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <button type="button" class="btn btn-primary">Negar</button>
+        <a class="btn btn-primary" href="../principal/home.php" role="button">Negar Emprestimo</a>
       </div>
     </div>
   </div>
@@ -93,7 +98,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary">Sim</button>
+        <a class="btn btn-primary" href="../jogos/emprestimo.php?id=<?php $resultado['id'];?>" role="button">Sim</a>
       </div>
     </div>
   </div>
