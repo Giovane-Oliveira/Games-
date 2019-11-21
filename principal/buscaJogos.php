@@ -52,7 +52,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 				
                 <h4><?php echo $resultado['nomeGame'] ?></h4>
                 <p><?php echo $resultado['descricao'] ?></p>
-                <img src="../<?php echo $resultado['imgCapa'] ?>" width="400" height="400">
+                <img src="<?php echo $resultado['imgCapa'] ?>" width="400" height="400">
                
                 <br>
                 <br>
