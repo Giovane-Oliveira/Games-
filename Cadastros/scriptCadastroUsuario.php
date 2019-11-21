@@ -38,8 +38,6 @@
 			}
 		}
 	} else {
-		echo "<script>alert('Email Invalido!');history.back();</script>";
+		echo 'Email Inválido!';
 	}
-
-	
 ?>

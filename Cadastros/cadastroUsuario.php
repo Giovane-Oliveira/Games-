@@ -25,6 +25,10 @@
 				}
             }
 			
+			function validarEmail(){
+								
+			}
+			
 			$(document).ready(function() {
 				
 				function limpa_formulário_cep() {
@@ -98,7 +102,7 @@
 							</div>
 							<div class="row">
 								<div class="form-label-group col">
-									<input type="text" id="inputEmail" name="email" placeholder="Email" class="form-control" placeholder="Informe seu Email"required /> <br />											
+									<input type="text" id="inputEmail" name="email" placeholder="Email" class="form-control" onblur="validarEmail()" placeholder="Informe seu Email"required /> <br />											
 								</div>	
 								<div class="form-label-group col">
 									<input class="form-control" type="int" name="cep" placeholder="CEP" id="cep" maxlength="8" required /> 

@@ -19,7 +19,7 @@
 			$imagem= $diretorio.$novo_nome;
 			$userId = $_SESSION['id'];
 
-	$sql_code = "UPDATE game (nomeGame, descricao, imgCapa, usuario_id, genero_id) SET ('$nomeGame','$descricao','$imagem','$userId','$genero')";
+	$sql_code = "INSERT INTO game (nomeGame, descricao, imgCapa, usuario_id, genero_id) VALUES ('$nomeGame','$descricao','$imagem','$userId','$genero')";
 				
 	if ($conecta->query($sql_code) === TRUE){
 				header('Location: ../jogos/jogos.php');
