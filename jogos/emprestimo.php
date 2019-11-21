@@ -153,27 +153,29 @@
 ?>
 		<ul>
 <?php		
-		while($row2 = mysqli_fetch_assoc($resultChat2)){
-			if($row2['id_de'] == $_SESSION['id']){
+		if($resultChat2 = mysqli_query($conecta, $sql2)){
+			while($row2 = mysqli_fetch_assoc($resultChat2)){
+				if($row2['id_de'] == $_SESSION['id']){
 ?>	
-				<li class="eu">
-					<p>
-						<?php 
-								echo $row2['mensagem'];
-						?>
-					</p>
-				</li>
+					<li class="eu">
+						<p>
+							<?php 
+									echo $row2['mensagem'];
+							?>
+						</p>
+					</li>
 		<?php 
-			} else if($row2['id_de'] != $_SESSION['id']){
+				} else if($row2['id_de'] != $_SESSION['id']){
 		?>
-				<li class="">
-					<p>
-						<?php
-							echo $row2['mensagem'];
-						?>
-					</p>
-				</li>
+					<li class="">
+						<p>
+							<?php
+								echo $row2['mensagem'];
+							?>
+						</p>
+					</li>
 <?php
+				}
 			}
 		}
 ?>
