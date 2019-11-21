@@ -34,7 +34,7 @@ $resultado_emprestimo = mysqli_query($conecta, $consulta_emprestimo);
 	<tr>
       <td><?php echo $resultado['data']; ?></td>
       <td><?php echo $resultado2['nomeGame']; ?></td>
-      <td><img src="../<?php echo $resultado2['imgCapa'] ?>" alt="Foto Game" class="rounded-circle" width="30" height="30"></td>
+      <td><img src="<?php echo $resultado2['imgCapa'] ?>" alt="Foto Game" class="rounded-circle" width="30" height="30"></td>
       <td><?php echo $resultado4['nomeGenero']; ?></td>
       <td><?php echo $resultado3['nome']; ?></td>
       <td><img src="<?php echo $resultado3['imgPerfil'] ?>" alt="Foto Game" class="rounded-circle" width="30" height="30"></td>
