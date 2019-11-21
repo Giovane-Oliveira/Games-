@@ -32,6 +32,7 @@
 				<th scope="col">Nome do Dono</th>
 				<th scope="col">Dono</th>
 				<th scope="col">Status</th>
+				<th scope="col">Chat</th>
 
 	        </tr>
 	            </thead>
