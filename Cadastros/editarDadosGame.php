@@ -75,7 +75,7 @@
 							<br>
 									
 							<div class="text-center">
-								<a href="../Principal/perfilUsuario.php">
+								<a href="../jogos/jogos.php">
 									<button type="button" class="btn btn-outline-success">Voltar</button>
 								</a>		
 								
