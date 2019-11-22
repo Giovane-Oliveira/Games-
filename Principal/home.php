@@ -9,7 +9,7 @@ if($_SESSION['logado'] == true){
 <head>
   <title>Alpha Games</title>
   <meta charset="UTF-8">
-  <?php header("Content-Type: text/html; charset=ISO-8859-1",true);?>
+  
   <meta name="description" content="Curso de Sistemas de Informação">
   <meta name="keywords" content="ULBRA, SI, Cachoeira do Sul">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -49,11 +49,11 @@ if($_SESSION['logado'] == true){
                     </tbody>
                   </table>
                   </div>
-
+                  <div class="col">
                    <?php                    
                         include 'buscaJogos.php';
                     ?>
-
+                  </div>
                 <div class="col">
                 <br>
                  <table class="table">

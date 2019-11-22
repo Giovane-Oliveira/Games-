@@ -10,7 +10,7 @@ $result = mysqli_query($conecta, $consulta);
 			<button type="button" class="btn btn-link ">
 				<a style="white-space: nowrap" href="home.php?idGenero=<?php echo($genero_id)?>">	
 					<img src="../imagens/icon/iconPesquisa.png" width="15" height="15">
-					<text class="text-dark">&nbsp&nbsp<?php echo $resultado['nomeGenero']; ?></text>
+					<text class="text-dark">&nbsp&nbsp<?php echo  utf8_encode($resultado['nomeGenero']); ?></text>
 				</a>
 			</button>
 		</th>
