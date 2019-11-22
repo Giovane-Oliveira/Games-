@@ -58,7 +58,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <a class="btn btn-primary" href="../principal/home.php" role="button">Aprovar Emprestimo</a>
+        <a class="btn btn-primary" href="../jogos/aprovaEmprestimo.php" role="button">Aprovar Emprestimo</a>
       </div>
     </div>
   </div>
@@ -78,17 +78,17 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <a class="btn btn-primary" href="../principal/home.php" role="button">Negar Emprestimo</a>
+        <a class="btn btn-primary" href="../jogos/negaEmpretimo.php" role="button">Negar Emprestimo</a>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" id="disponibilizarJogo" tabindex="-1" role="dialog" aria-labelledby="aprovarEmprestimo" aria-hidden="true">
+<div class="modal fade" id="disponibilizarJogo" tabindex="-1" role="dialog" aria-labelledby="disponibilizarJogo" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="aprovarEmprestimo">Jogo Liberado para emprestimo?</h5>
+        <h5 class="modal-title" id="disponibilizarJogo">Jogo Liberado para emprestimo?</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
