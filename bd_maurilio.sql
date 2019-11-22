@@ -17,13 +17,15 @@ CREATE DATABASE IF NOT EXISTS `projetogame` /*!40100 DEFAULT CHARACTER SET latin
 USE `projetogame`;
 
 -- Copiando estrutura para tabela projetogame.chat
-CREATE TABLE IF NOT EXISTS `chat` (
-  `id` int(100) NOT NULL AUTO_INCREMENT,
-  `id_de` int(100) NOT NULL,
-  `id_para` int(100) NOT NULL,
-  `mensagem` varchar(255) NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+CREATE TABLE `projetogame`.`chat` (
+	`id` INT(100) NOT NULL AUTO_INCREMENT,
+	`id_de` INT(100) NOT NULL ,
+	`id_para` INT(100) NOT NULL ,
+	`id_game` INT(100) NOT NULL ,
+	`id_conversa` INT(100) ,
+	`mensagem` VARCHAR(255) NOT NULL ,
+	PRIMARY KEY (`id`)
+)	ENGINE = InnoDB DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela projetogame.chat: ~0 rows (aproximadamente)
 /*!40000 ALTER TABLE `chat` DISABLE KEYS */;
