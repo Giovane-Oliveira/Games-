@@ -1,4 +1,21 @@
 
+
+Pular para o conteúdo
+Como usar o Gmail com leitores de tela
+
+1 de 910
+home.php
+Caixa de entrada
+x
+
+Maurilio Dener <mauriliodener@gmail.com>
+Anexos
+21:34 (há 1 minuto)
+para eu
+
+
+Área de anexos
+
 <?php include '../config/conexao.php';
 if($_SESSION['logado'] == true){
 
@@ -9,7 +26,6 @@ if($_SESSION['logado'] == true){
 <head>
   <title>Alpha Games</title>
   <meta charset="UTF-8">
-  <?php header("Content-Type: text/html; charset=ISO-8859-1",true);?>
   <meta name="description" content="Curso de Sistemas de Informação">
   <meta name="keywords" content="ULBRA, SI, Cachoeira do Sul">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,7 +47,7 @@ if($_SESSION['logado'] == true){
             <div class="row">
 
 
-                <div class="col">
+                <div class="col-2">
                  <br>
                   <table class="table">
                     <thead class="thead-dark">
@@ -49,28 +65,27 @@ if($_SESSION['logado'] == true){
                     </tbody>
                   </table>
                   </div>
-
+				<div class="col">
                    <?php                    
                         include 'buscaJogos.php';
                     ?>
-
-                <div class="col">
+				</div>
+                <div class="col-2">
                 <br>
                  <table class="table">
                     <thead class="thead-dark">
-			<tr>
-				<th class="text-center">Usuarios</th>
-			</tr>
-		    </thead>
+						<tr>
+							<th class="text-center">Usuarios</th>
+						</tr>
+					</thead>
                     <tbody>
-
-                    <?php
-                      include 'buscaUsuarios.php';
-                    ?>
-
+						<?php
+						  include 'buscaUsuarios.php';
+						?>
                     </tbody>
                   </table>
                  </div>
+				 <div class="col-1"></div>
                 </div>
             </div>
 
@@ -91,3 +106,5 @@ if($_SESSION['logado'] == true){
   header('Location: ../login/index.php');
   
 } ?>
+home.php
+Exibindo home.php.

@@ -4,10 +4,15 @@
 
 ?>
 
+
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>Alpha Games</title>
+  <html lang="pt-BR">
   <meta charset="UTF-8">
   <?php header("Content-Type: text/html; charset=ISO-8859-1",true);?>
   <meta name="description" content="Curso de Sistemas de Informação">

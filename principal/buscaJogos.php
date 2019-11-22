@@ -24,7 +24,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 ?>
 
 
-	<div class="col-7">
+	<div class="col">
         <br>
             <div class="rolagem">
 
