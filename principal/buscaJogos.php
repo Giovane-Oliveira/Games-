@@ -70,6 +70,10 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 					<?php }else{ ?>
 					<button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
 					<?php } ?>
+
+					<!--<a href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>">
+							<input type="submit" class="btn btn-outline-success" value="Chat" />
+						</a>-->
 					</form>
 					<br>
 					<br>
