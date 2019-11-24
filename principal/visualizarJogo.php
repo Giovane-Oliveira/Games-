@@ -61,6 +61,7 @@
 							<a href="home.php">
 								<button type="button" class="btn btn-outline-success">Voltar</button>
 							</a>
+							&nbsp&nbsp
 						<?php if($resultado['disponivel'] == 0){  ?>
 							<a href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>">
 								<input type="submit" class="btn btn-outline-success" value="Solicitar Emprestimo" />
