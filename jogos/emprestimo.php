@@ -38,7 +38,7 @@
 			<a class="btn btn-outline-success" role="button" >Emprestimo solicitado</a>	
 			
 			<?php }else {?>
-			<hr>
+			<br><br>
 			<a href="../Principal/home.php">
 				<button type="button" class="btn btn-danger">Cancelar</button>
 			</a>&nbsp&nbsp
