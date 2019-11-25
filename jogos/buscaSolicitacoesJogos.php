@@ -39,7 +39,7 @@ $resultado_emprestimo = mysqli_query($conecta, $consulta_emprestimo);
       <td><?php echo $resultado3['nome']; ?></td>
       <td><img src="<?php echo $resultado3['imgPerfil'] ?>" alt="Foto Game" class="rounded-circle" width="30" height="30"></td>
 
-      <td><?php if($resultado['situacao_id'] == 1){echo 'Livre';}else if ($resultado['situacao_id'] == 2) { echo 'Indisponivel';} else {echo 'Solicitado';} ?></td>
+      <td><?php if($resultado['situacao_id'] == 1){echo 'Concluido';}else if ($resultado['situacao_id'] == 2) { echo 'Negado';} else if ($resultado['situacao_id'] == 3) {echo 'Solicitado';} else {echo 'Aprovada';} ?></td>
 
       <<td><a class="btn btn-primary" href="../jogos/emprestimo.php?id=<?php echo $resultado2['id'];?>" role="button">Chat</a></td>
       

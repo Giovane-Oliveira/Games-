@@ -1,5 +1,4 @@
-<meta http-equiv=”Content-Type” content=”text/html; charset=utf-8″>
-<?php header("Content-Type: text/html; charset=ISO-8859-1",true);?>
+
 <?php
 
 
@@ -34,9 +33,9 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       <td><?php echo $resultado3['nome']; ?></td>
       <td><img src="<?php echo $resultado3['imgPerfil'] ?>" alt="Foto Perfil" class="rounded-circle" width="30" height="30"></td>
       <td><button type="button" class="btn btn-success" data-toggle="modal" data-target="#aprovarEmprestimo">Aprovar</button></td>
-	  <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#negarEmprestimo">Negar</button></td>
-	  <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#disponibilizarJogo">Disponibilizar Jogo</button></td>
-	  <td><a class="btn btn-primary" href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" role="button">Chat</a></td>
+	    <td><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#negarEmprestimo">Negar</button></td>
+	    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#disponibilizarJogo">Disponibilizar Jogo</button></td>
+	    <td><a class="btn btn-primary" href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" role="button">Chat</a></td>
 
       
       
@@ -58,7 +57,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <a class="btn btn-primary" href="../jogos/aprovaEmprestimo.php" role="button">Aprovar Emprestimo</a>
+        <a class="btn btn-primary" href="../jogos/aprovaEmprestimo.php?id=<?php echo($resultado['id']);?>&idSolicitacao=<?php echo($resultado2['id']);?>" role="button">Aprovar Emprestimo</a>
       </div>
     </div>
   </div>
@@ -78,7 +77,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Voltar</button>
-        <a class="btn btn-primary" href="../jogos/negaEmpretimo.php" role="button">Negar Emprestimo</a>
+        <a class="btn btn-primary" href="../jogos/aprovaEmprestimo.php?id=<?php echo($resultado['id']);?>&idSolicitacao=<?php echo($resultado2['id']);?>" role="button">Negar Emprestimo</a>
       </div>
     </div>
   </div>
