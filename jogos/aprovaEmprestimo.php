@@ -1,9 +1,11 @@
 <?php include '../config/conexao.php'; 
 
-$idGame = $_GET['id'];
+$idGame = $_GET['idGame'];
 $idSolicitacao =  $_GET['idSolicitacao'];
 
-$sqlAtualizacaoGame = "UPDATE game SET disponivel = 0 WHERE id = $id;";
+echo $idSolicitacao;
+
+$sqlAtualizacaoGame = "UPDATE game SET disponivel = 1 WHERE id = $idGame;";
 mysqli_query($conecta, $sqlAtualizacaoGame);
 
 $sqlAtualizacaoSolicitacao = "UPDATE solicitacao SET situacao_id = 4 WHERE id = $idSolicitacao;";

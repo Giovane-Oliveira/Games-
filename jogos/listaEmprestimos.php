@@ -33,6 +33,7 @@
 				<th scope="col">Aprovar</th>
 				<th scope="col">Negar</th>
 				<th scope="col">Emrestimo</th>
+				<th scope="col">Status</th>
 				<th scope="col">Chat</th>
 
 	        </tr>
