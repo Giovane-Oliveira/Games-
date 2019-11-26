@@ -35,8 +35,8 @@ $resultado_solicitacao = mysqli_query($conecta, $consulta_solicitacao);
       <td><?php echo $resultado3['nome']; ?></td>
       <td><img src="<?php echo $resultado3['imgPerfil'];?>" alt="Foto Perfil" class="rounded-circle" width="30" height="30"></td>
 
-      <td><a class="btn btn-success" href="../jogos/aprovaEmprestimo.php?idGame=<?php echo($resultado2['id']);?>&idSolicitacao=<?php echo($resultado['id']);?>" role="button" >Aprovar</a></td>
-      <td><a class="btn btn-danger" href="../jogos/negaEmprestimo.php?idGame=<?php echo($resultado2['id']);?>&idSolicitacao=<?php echo($resultado['id']);?>" role="button" >Negar</a></td>
+      <td><?php if ($resultado['situacao_id'] == 3){ ?> <a class="btn btn-success" href="../jogos/aprovaEmprestimo.php?idGame=<?php echo($resultado2['id']);?>&idSolicitacao=<?php echo($resultado['id']);?>" role="button" >Aprovar</a></td> <?php }else { echo "__";} ?>
+      <td><?php if ($resultado['situacao_id'] == 3){ ?> <a class="btn btn-danger" href="../jogos/negaEmprestimo.php?idGame=<?php echo($resultado2['id']);?>&idSolicitacao=<?php echo($resultado['id']);?>" role="button" >Negar</a></td>  <?php } else { echo "__";} ?>
       <td><a class="btn btn-primary" href="../jogos/liberaEmprestimo.php?idGame=<?php echo($resultado2['id']);?>&idSolicitacao=<?php echo($resultado['id']);?>" role="button" >Disponibilizar Jogo</a></td>
       
 	    
