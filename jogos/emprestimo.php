@@ -13,6 +13,8 @@
     $resultado = mysqli_fetch_assoc($result);
     $resultado_id = $resultado['id'];
 
+    $idUsuario = $_SESSION['id'];
+
 ?> 
 
 <!-- CORPO PRINCIPAL -->
@@ -30,6 +32,8 @@
 			<?php echo $resultado['descricao']; ?>
 			</div></div>
 			<?php
+
+			if($idUsuario !=  $resultado['usuario_id']){
 			  
 				if ($resultado['disponivel'] == 1){
 					
@@ -44,7 +48,8 @@
 			</a>&nbsp&nbsp
 			<a class="btn btn-outline-success" href="" role="button" data-toggle="modal" data-target="#exampleModal">Solicitar </a>
 
-			<?php }?>
+			<?php }
+		}?>
 			<br><br>  
 		</div>
 		
