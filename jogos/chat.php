@@ -14,11 +14,11 @@
 		$sql1 = "SELECT * FROM chat WHERE id_de = $_SESSION[id] AND id_para = $resultado[usuario_id] and id_game = $id and id_conversa = $_SESSION[id] or id_de = $resultado[usuario_id] AND id_para = $_SESSION[id] and id_game = $id and id_conversa = $_SESSION[id] ORDER BY id asc "; 
 		$resultChat = mysqli_query($conecta, $sql1);;
 ?>
-	<div class="p-3 mb-2 bg-light text-dark text-center">
-        <h1>CHAT</h1>
-    </div>
 	<div class="window" id="janela_x">
 		<div class="body">
+			<div class="card-header bg-dark text-white">
+				<h2>CHAT</h2>
+			</div>
 			<div class="mensagens" id="mensagens">
 				<ul>
 <?php		
@@ -56,11 +56,12 @@
 
 		if($resultChat1 = mysqli_query($conecta, $sql1)){
 ?>
-	<div class="p-3 mb-2 bg-light text-dark text-center">
-            <h1>CHAT</h1>
-      </div>
+	
 	<div class="window" id="janela_x">
 		<div class="body">
+			<div class="card-header bg-dark text-white">
+				<h2>CHAT</h2>
+			</div>
 			<div class="mensagens" id="mensagens">
 				<ul>
 <?php
@@ -118,7 +119,7 @@
 																						}
 																					?>"/>
 				<input type="text" name="mensagem" class="enviaMsg" />
-				<button type="submit" value="Enviar">Enviar</button>
+				<button class="bg-dark text-white" type="submit" value="Enviar">Enviar</button>
         </form>
       </div>
 <?php
