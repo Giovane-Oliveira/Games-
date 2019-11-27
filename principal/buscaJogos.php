@@ -20,10 +20,7 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 
 }
 
-
 ?>
-
-
 	<div class="col">
         <br>
             <div class="rolagem">
@@ -39,24 +36,27 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
             	$resultadoUsuario = mysqli_fetch_array($executaConsultaUsuario);
 
             	 ?>
-				<hr>
-				<!-- usuario-->
-                <div class="p-3 mb-2 bg-light text-dark text-center">
-					  							
+				<br>
+				<!-- usuario--><div class="card">
+                <div class="card-header">
+					  <h4>								
 					<img src="<?php echo $resultadoUsuario['imgPerfil'] ?>" alt="Foto usuario" class="rounded-circle" width="70" height="70">
-					<?php echo $resultadoUsuario ['nome'] ?>
+					<?php echo $resultadoUsuario ['nome'] ?></h4>
 					  
 				</div>
 				<!-- usuario-->
+				<br>
 				
-				
-                <h4><?php echo $resultado['nomeGame'] ?></h4>
-                <p><?php echo $resultado['descricao'] ?></p>
+                <?php echo $resultado['nomeGame'] ?>
+				<div class="col-12">
+					<?php echo $resultado['descricao'] ?>
+				</div>
+				<br>
                 <img src="<?php echo $resultado['imgCapa'] ?>" width="400" height="400">
-               
+				
                 <br>
-                <br>
-                
+				<hr>
+                <br>                
 				<div class="border-0  card w-50">
 					<form action="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>" method="POST">
 						<input type="hidden" name="id_Conversa" class="id_Conversa" value="<?php if($_SESSION['id'] != $resultado['usuario_id']){echo $_SESSION['id'];}?>" />
@@ -70,16 +70,9 @@ $resultado_game = mysqli_query($conecta, $consulta_game);
 					<?php }else{ ?>
 					<button type="button" disabled class="btn btn-outline-danger">Jogo Ocupado</button>
 					<?php } ?>
-
-					<!--<a href="../jogos/emprestimo.php?id=<?php echo $resultado['id'];?>">
-							<input type="submit" class="btn btn-outline-success" value="Chat" />
-						</a>-->
-					</form>
-					<br>
-					<br>
+					</form></div>
+					<br>					
 				</div>
-                
-				<hr>
                 <br><br><br>
                 <?php } ?>
         	</div>
